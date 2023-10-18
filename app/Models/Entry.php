@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Entry extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'patient',
+        'type',
+        'content'
+    ];
+
+    public function patient()
+    {
+        return Patient::find($this->patient);
+    }
+}
