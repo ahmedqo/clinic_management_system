@@ -13,8 +13,9 @@
     <nav
         class="w-[240px] lg:w-full h-full flex flex-col bg-x-white shadow-x-core absolute top-0 left-0 rtl:right-0 rtl:left-auto overflow-hidden">
         <div class="flex flex-col h-full gap-4 m-4">
-            <header class="w-full flex items-center justify-center overflow-hidden">
-                <h1 class="text-x-black text-2xl font-x-core leading-[1] min-w-max">{{ __('CLINIC') }}</h1>
+            <header class="flex items-center justify-center overflow-hidden w-full min-w-full">
+                <img title="logo-image" alt="logo-image" src="{{ asset('img/logo.png') }}?v={{ env('APP_VERSION') }}"
+                    class="block w-full" />
             </header>
             <ul
                 class="flex flex-col gap-4 flex-1 overflow-y-auto overflow-x-hidden border-e lg:border-none border-x-white">

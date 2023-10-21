@@ -12,11 +12,9 @@
 
 <body class="flex flex-col flex-wrap lg:flex-row bg-gray-100">
     <section id="overlay"
-        class="bg-x-prime bg-opacity-80 backdrop-blur-lg fixed inset-0 z-[100] flex items-center justify-center">
-        {{-- <img title="logo-image" alt="logo-image" src="{{ asset('img/logo.png') }}?v={{ env('APP_VERSION') }}"
-            class="block w-32 animate-bounce duration-150" /> --}}
-            <h1 class="text-x-black text-3xl lg:text-5xl font-x-core leading-[1] min-w-max animate-bounce duration-150">{{ __('CLINIC') }}
-            </h1>
+        class="bg-x-acent bg-opacity-80 backdrop-blur-lg fixed inset-0 z-[100] flex items-center justify-center">
+        <img title="logo-image" alt="logo-image" src="{{ asset('img/logo.png') }}?v={{ env('APP_VERSION') }}"
+            class="block w-32 animate-bounce duration-150" />
     </section>
     <header class="w-full bg-transparent fixed top-0 left-0 right-0 z-[1] lg:z-[50]">
         <nav class="w-full flex items-center gap-2 container mx-auto p-4">
@@ -69,11 +67,9 @@
     <main class="w-full min-h-[100vh] flex items-center justify-center">
         <section class="container mx-auto lg:w-[500px]">
             <div class="p-4 flex flex-col gap-4">
-                <a href="/" class="w-max mx-auto block">
-                    {{-- <img title="logo-image" alt="logo-image"
-                        src="{{ asset('img/logo.png') }}?v={{ env('APP_VERSION') }}" class="block w-32" /> --}}
-                    <h1 class="text-x-black text-2xl lg:text-4xl font-x-core leading-[1] min-w-max">{{ __('CLINIC') }}
-                    </h1>
+                <a href="/" class="w-full mx-auto block">
+                    <img title="logo-image" alt="logo-image"
+                        src="{{ asset('img/logo.png') }}?v={{ env('APP_VERSION') }}" class="block w-full" />
                 </a>
                 <div class="bg-x-white p-4 rounded-x-core shadow-xl">
                     @yield('content')

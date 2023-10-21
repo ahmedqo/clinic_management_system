@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap');
 :root {
     /** */
-    --prime: #53DFA9;
-    --acent: #A9EFD4;
+    --prime: #126E9E;
+    --acent: #6BA4C1;
     /** */
     --black-blur: #1D1D1D15;
     --white-blur: #FCFCFC40;
@@ -113,41 +113,48 @@ table:not([default])+.x-datatable-container .x-datatable-filter-field-container 
     background: var(--white) !important;
 }
 
-#wrapper>div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
+.bg-x-linear {
+    background: linear-gradient(90deg, #126E9E, #00C8CB);
 }
 
-#wrapper>div div {
+#wrapper .fc-header-toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+#wrapper .fc-toolbar-chunk,
+#wrapper .fc-button-group {
     width: max-content;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#wrapper>div div:nth-child(2) {
+#wrapper .fc-toolbar-chunk {
+    width: 100%;
+    gap: .5rem;
+}
+
+#wrapper .fc-toolbar-chunk:nth-child(2) {
+    display: none;
+}
+
+#wrapper .fc-toolbar-title {
     font-size: 1.4rem;
     line-height: 1;
     font-weight: var(--weight);
-    width: 100%;
-    order: -1;
+    margin: 0 auto;
+    width: max-content;
 }
 
-#wrapper>div div>div {
+#wrapper .fc-button-group {
     border-radius: var(--radius);
     overflow: hidden;
     gap: 2px;
 }
 
-#wrapper>div div:has(div+button)>button {
-    border-radius: var(--radius);
-    margin-inline-start: .5rem;
-}
-
-#wrapper>div button {
+#wrapper button {
     height: 42px;
     padding: 1rem;
     background-color: var(--prime);
@@ -155,28 +162,33 @@ table:not([default])+.x-datatable-container .x-datatable-filter-field-container 
     font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: var(--weight);
-    border-radius: 0.125rem;
+    border-radius: var(--radius);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#wrapper>div button:not(:disabled):hover {
+#wrapper .fc-button-group button {
+    border-radius: 0.125rem;
+}
+
+#wrapper button:not(:disabled):hover {
     background-color: var(--acent);
     color: var(--black);
 }
 
-#wrapper>div button:disabled {
+#wrapper button:disabled {
+    margin-inline-start: auto;
     opacity: .6;
 }
 
-#wrapper>div button span {
+#wrapper button span {
     display: none;
 }
 
 #calendar {
     --fc-non-business-color: #F5F5F599;
-    --fc-today-bg-color: #53DFA930;
+    --fc-today-bg-color: #126E9E30;
 }
 
 #calendar table[role="grid"] {
@@ -192,9 +204,14 @@ table:not([default])+.x-datatable-container .x-datatable-filter-field-container 
     table:not([default])+.x-datatable-container .x-datatable-body-col:last-of-type {
         padding-inline-end: 2rem;
     }
-    #wrapper>div div:nth-child(2) {
-        order: 0;
+    #wrapper .fc-header-toolbar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    #wrapper .fc-toolbar-chunk {
         width: max-content;
-        font-size: 1.6rem;
     }
 }

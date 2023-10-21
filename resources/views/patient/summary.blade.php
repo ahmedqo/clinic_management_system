@@ -747,7 +747,7 @@
 
     <section id="page" class="w-full hidden">
         <div class="flex flex-col">
-            <h1 class="text-x-black font-x-core text-4xl text-center p-4">{{ __('Patient Summary') }}</h1>
+            <h1 class="text-x-black font-x-core text-4xl text-center p-4 leading-[1]">{{ __('Patient Summary') }}</h1>
 
             <div class="w-full flex flex-col gap-4 p-4">
                 <h2 class="text-x-black font-x-core text-2xl">{{ __('General Info') }}</h2>
@@ -822,7 +822,7 @@
                 </div>
             </div>
 
-            <h2 class="text-x-black font-x-core text-2xl p-4">{{ __('Appointments List') }}</h2>
+            <h2 class="text-x-black font-x-core text-2xl p-4 leading-[1]">{{ __('Appointments List') }}</h2>
             <div class="border-x-shade border-t border-b w-full">
                 <table class="w-full">
                     @if ($data->appointments()->count())
@@ -874,7 +874,7 @@
                 </table>
             </div>
 
-            <h2 class="text-x-black font-x-core text-2xl p-4">{{ __('Contacts List') }}</h2>
+            <h2 class="text-x-black font-x-core text-2xl p-4 leading-[1]">{{ __('Contacts List') }}</h2>
             <div class="border-x-shade border-t border-b w-full">
                 <table class="w-full">
                     @if ($data->contacts()->count())
@@ -912,7 +912,7 @@
                 </table>
             </div>
 
-            <h2 class="text-x-black font-x-core text-2xl p-4">{{ __('Records List') }}</h2>
+            <h2 class="text-x-black font-x-core text-2xl p-4 leading-[1]">{{ __('Records List') }}</h2>
             <div class="border-x-shade border-t border-b w-full">
                 <table class="w-full">
                     @if ($data->records()->count())
@@ -948,7 +948,7 @@
                 </table>
             </div>
 
-            <h2 class="text-x-black font-x-core text-2xl p-4">{{ __('Entries List') }}</h2>
+            <h2 class="text-x-black font-x-core text-2xl p-4 leading-[1]">{{ __('Entries List') }}</h2>
             <div class="border-x-shade border-t border-b w-full">
                 <table class="w-full">
                     @if ($data->entries()->count())
@@ -988,7 +988,7 @@
                 </table>
             </div>
 
-            <h2 class="text-x-black font-x-core text-2xl p-4">{{ __('Prescriptions List') }}</h2>
+            <h2 class="text-x-black font-x-core text-2xl p-4 leading-[1]">{{ __('Prescriptions List') }}</h2>
             <div class="border-x-shade border-t border-b w-full">
                 <table class="w-full">
                     @if ($data->prescriptions()->count())
@@ -1068,7 +1068,7 @@
                 </table>
             </div>
 
-            <h2 class="text-x-black font-x-core text-2xl p-4">{{ __('Invoices List') }}</h2>
+            <h2 class="text-x-black font-x-core text-2xl p-4 leading-[1]">{{ __('Invoices List') }}</h2>
             <div class="border-x-shade border-t border-b w-full">
                 <table class="w-full">
                     @if ($data->invoices()->count())
@@ -1148,6 +1148,8 @@
 
 @section('scripts')
     <script>
+        x.Print.opts.bg =
+            `<img src="{{ asset('img/logo.png') }}?v={{ env('APP_VERSION') }}" class="fixed w-full h-full block inset-0 object-contain object-center opacity-5 z-[-1]" />`;
         x.DataTable().Print("#page", ".print");;
         const links = [...document.querySelectorAll('.link')];
         const tabs = [...document.querySelectorAll('.tab')];

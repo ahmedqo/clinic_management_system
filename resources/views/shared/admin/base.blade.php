@@ -12,12 +12,9 @@
 
 <body class="flex flex-col flex-wrap lg:flex-row bg-gray-100 !overflow-hidden !h-screen">
     <section id="overlay"
-        class="bg-x-prime bg-opacity-80 backdrop-blur-lg fixed inset-0 z-[100] flex items-center justify-center">
-        {{-- <img title="logo-image" alt="logo-image" src="{{ asset('img/logo.png') }}?v={{ env('APP_VERSION') }}"
-            class="block w-32 animate-bounce duration-150" /> --}}
-        <h1 class="text-x-black text-3xl lg:text-5xl font-x-core leading-[1] min-w-max animate-bounce duration-150">
-            {{ __('CLINIC') }}
-        </h1>
+        class="bg-x-acent bg-opacity-80 backdrop-blur-lg fixed inset-0 z-[100] flex items-center justify-center">
+        <img title="logo-image" alt="logo-image" src="{{ asset('img/logo.png') }}?v={{ env('APP_VERSION') }}"
+            class="block w-32 animate-bounce duration-150" />
     </section>
     @include('shared.admin.sidebar')
     <main class="flex flex-col w-full lg:w-[calc(100%-240px)] lg:flex-1">

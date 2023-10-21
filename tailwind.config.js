@@ -19,8 +19,8 @@ module.exports = {
                 "x-drop": "var(--black-blur, #0000) 0px 25px 20px -20px",
             },
             colors: {
-                "x-prime": "#53DFA9",
-                "x-acent": "#A9EFD4",
+                "x-prime": "#126E9E",
+                "x-acent": "#6BA4C1",
                 /** */
                 "x-black-blur": "#1D1D1D15",
                 "x-white-blur": "#FCFCFC40",

@@ -88,15 +88,15 @@
     </div>
 
     <section id="page" class="w-full hidden">
-        <div class="grid grid-rows-1 grid-cols-2 items-center justify-between gap-4 mb-6">
-            <h1 class="text-2xl font-x-core text-x-black text-center col-span-2">
+        <div class="grid grid-rows-1 grid-cols-2 items-center justify-between gap-6 mb-6">
+            <h1 class="text-2xl font-x-core text-x-black text-center col-span-2 leading-[1]">
                 {{ __('Invoice') }}
             </h1>
-            <h2 class="text-lg underline underline-offset-2 text-x-black text-start mt-4">
+            <h2 class="text-lg underline underline-offset-2 text-x-black text-start">
                 {{ strtoupper($data->patient()->last_name) }}
                 {{ ucfirst($data->patient()->first_name) }}
             </h2>
-            <h2 class="text-lg underline underline-offset-2 text-x-black text-end mt-8">
+            <h2 class="text-lg underline underline-offset-2 text-x-black text-end">
                 {{ $data->created_at->format('Y-m-d') }}
             </h2>
         </div>
@@ -150,13 +150,13 @@
             x.Print.opts.css = [...x.Print.opts.css, `<style>
                 @media print {
                     table#page thead td header {
-                        height: 40mm;
+                        height: 34mm;
                     }
                     table#page tfoot td footer {
-                        height: 26mm;
+                        height: 38mm;
                     }
                     table#page tbody td main {
-                        margin: 5mm 5mm 5mm 5mm;
+                        margin: 5mm 20mm 5mm 20mm;
                     }
                 }
                 </style>`]

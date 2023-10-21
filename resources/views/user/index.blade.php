@@ -98,7 +98,7 @@
 
     <section id="page" class="w-full hidden">
         <div class="flex flex-col">
-            <h1 class="text-x-black font-x-core text-2xl p-4">{{ __('Users List') }}</h1>
+            <h1 class="text-x-black font-x-core text-2xl p-4 leading-[1]">{{ __('Users List') }}</h1>
             <div class="border-x-shade border-t border-b w-full">
                 <table class="w-full">
                     @if ($data->count())
@@ -152,108 +152,12 @@
             </div>
         </div>
     </section>
-    {{-- <section id="page" class="w-full hidden">
-        <div class="flex flex-col gap-4">
-            <h1 class="text-x-black font-x-core text-2xl">{{ __('Users List') }}</h1>
-            <div class="flex flex-col gap-4">
-                @foreach ($data as $row)
-                    @if ($loop->index > 0)
-                        <div class="border-x-shade border-t"></div>
-                    @endif
-                    <div class="w-full grid grid-rows-1 grid-cols-6 gap-4">
-                        <div class="flex flex-col gap-px">
-                            <label class="text-x-black font-x-core text-sm">#</label>
-                            <div
-                                class="min-h-[42px] text-x-black text-base w-full p-2 rounded-md bg-x-white border border-x-shade">
-                                {{ $row->id }}
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-px col-span-5">
-                            <label class="text-x-black font-x-core text-sm">{{ __('Full Name') }}</label>
-                            <div
-                                class="min-h-[42px] text-x-black text-base w-full p-2 rounded-md bg-x-white border border-x-shade">
-                                {{ strtoupper($row->last_name) }} {{ ucfirst($row->first_name) }}
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-px col-span-3">
-                            <label class="text-x-black font-x-core text-sm">{{ __('Gender') }}</label>
-                            <div
-                                class="min-h-[42px] text-x-black text-base w-full p-2 rounded-md bg-x-white border border-x-shade">
-                                {{ ucwords(__($row->gender) ?? '___') }}
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-px col-span-3">
-                            <label class="text-x-black font-x-core text-sm">{{ __('Birth Date') }}</label>
-                            <div
-                                class="min-h-[42px] text-x-black text-base w-full p-2 rounded-md bg-x-white border border-x-shade">
-                                {{ $row->birth_date ?? '___' }}
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-px col-span-3">
-                            <label class="text-x-black font-x-core text-sm">{{ __('Nationality') }}</label>
-                            <div
-                                class="min-h-[42px] text-x-black text-base w-full p-2 rounded-md bg-x-white border border-x-shade">
-                                {{ $row->nationality ?? '___' }}
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-px col-span-3">
-                            <label class="text-x-black font-x-core text-sm">{{ __('Identity') }}</label>
-                            <div
-                                class="min-h-[42px] text-x-black text-base w-full p-2 rounded-md bg-x-white border border-x-shade">
-                                {{ $row->identity ?? '___' }}
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-px col-span-3">
-                            <label class="text-x-black font-x-core text-sm">{{ __('Email') }}</label>
-                            <div
-                                class="min-h-[42px] text-x-black text-base w-full p-2 rounded-md bg-x-white border border-x-shade">
-                                {{ $row->email ?? '___' }}
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-px col-span-3">
-                            <label class="text-x-black font-x-core text-sm">{{ __('Phone') }}</label>
-                            <div
-                                class="min-h-[42px] text-x-black text-base w-full p-2 rounded-md bg-x-white border border-x-shade">
-                                {{ $row->phone ?? '___' }}
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-px col-span-6">
-                            <label class="text-x-black font-x-core text-sm">{{ __('Address') }}</label>
-                            <div
-                                class="min-h-[42px] text-x-black text-base w-full p-2 rounded-md bg-x-white border border-x-shade">
-                                {{ $row->address ?? '___' }}
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-px col-span-2">
-                            <label class="text-x-black font-x-core text-sm">{{ __('State') }}</label>
-                            <div
-                                class="min-h-[42px] text-x-black text-base w-full p-2 rounded-md bg-x-white border border-x-shade">
-                                {{ $row->state ?? '___' }}
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-px col-span-2">
-                            <label class="text-x-black font-x-core text-sm">{{ __('City') }}</label>
-                            <div
-                                class="min-h-[42px] text-x-black text-base w-full p-2 rounded-md bg-x-white border border-x-shade">
-                                {{ $row->city ?? '___' }}
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-px col-span-2">
-                            <label class="text-x-black font-x-core text-sm">{{ __('Zipcode') }}</label>
-                            <div
-                                class="min-h-[42px] text-x-black text-base w-full p-2 rounded-md bg-x-white border border-x-shade">
-                                {{ $row->zipcode ?? '___' }}
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section> --}}
 @endsection
 
 @section('scripts')
     <script>
+        x.Print.opts.bg =
+            `<img src="{{ asset('img/logo.png') }}?v={{ env('APP_VERSION') }}" class="fixed w-full h-full block inset-0 object-contain object-center opacity-5 z-[-1]" />`;
         x.DataTable().Switch().Print("#page", "#print");
 
         function changeStatus(e) {

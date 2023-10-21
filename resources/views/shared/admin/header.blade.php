@@ -1,4 +1,4 @@
-<header class="w-full bg-x-prime sticky top-0 z-[40]">
+<header class="w-full bg-x-linear sticky top-0 z-[40]">
     <nav class="w-full flex items-center gap-2 p-2 px-4">
         <button id="trigger_menu" x-toggle targets="#menu"
             properties="left-0, -left-full, rtl:right-0, rtl:-right-full, rtl:left-auto, pointer-events-none, lg:w-[240px], lg:w-0"

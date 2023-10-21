@@ -180,8 +180,7 @@
         var calendar = new FullCalendar.Calendar(document.querySelector("#calendar"), {
             headerToolbar: {
                 "{{ Core::lang('ar') ? 'right' : 'left' }}": 'dayGridMonth,timeGridWeek,timeGridDay today',
-                center: "title",
-                "{{ Core::lang('ar') ? 'left' : 'right' }}": "prev,next"
+                "{{ Core::lang('ar') ? 'left' : 'right' }}": "prev title next"
             },
             initialView: "{{ Core::system()->report == 'month' ? 'dayGridMonth' : (Core::system()->report == 'week' ? 'timeGridWeek' : 'timeGridDay') }}",
             allDaySlot: false,
