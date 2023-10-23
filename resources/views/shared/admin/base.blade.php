@@ -54,12 +54,12 @@
         x.Select.opts.DataText.Search = "{{ ucwords(__('Search')) }}";
         x.DatePicker.opts.FullDay = {{ Core::lang('ar') ? 'true' : '3' }};
         x.Print.opts.css = [
-            "{{ asset('css/index.css') }}?v={{ env('APP_VERSION') }}",
-            "{{ asset('css/app.css') }}?v={{ env('APP_VERSION') }}"
+            "<link rel='stylesheet' href='{{ asset('css/index.css') }}?v={{ env('APP_VERSION') }}' />",
+            "<link rel='stylesheet' href='{{ asset('css/app.css') }}?v={{ env('APP_VERSION') }}' />"
         ];
         x.Print.opts.dir = "{{ Core::lang('ar') ? 'rtl' : 'ltr' }}";
         x.Print.opts.lang = "{{ app()->getLocale() }}";
-        x.Print.opts.margin = "0mm 0mm 0mm 0mm";
+        x.Print.opts.margin = "10mm 10mm 10mm 10mm";
 
         x.Toggle();
         x.Toggle.disable({

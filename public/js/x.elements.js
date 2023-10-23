@@ -332,7 +332,12 @@ const x = (function() {
     })();
 
     const Print = (function() {
-        function Print(target, trigger, { clear = true, exec = false } = {}) {
+        function $tempkate(opts) {
+            const { lang, dir, size, margin, css, page } = opts;
+            return `<!DOCTYPE html><html lang="${lang}"dir="${dir}"><head><meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible"content="IE=edge"/><meta name="viewport"content="width=device-width, initial-scale=1.0"/><style>@page{size:${size.page};margin:${margin}}#page{width:100%}#head{height:${size.head}}#foot{height:${size.foot}}</style>${css}</head><body><table id="page"><thead><tr><td><header id="head"></header></td></tr></thead><tbody><tr><td><main id="main">${page}</main></td></tr></tbody><tfoot><tr><td><footer id=foot></footer></td></tr></tfoot></table></body></html>`;
+        }
+
+        function Print(target, { trigger = null, clear = true, exec = false } = {}) {
             const page = document.querySelector(target);
 
             function $callable() {
@@ -342,26 +347,11 @@ const x = (function() {
                 var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
                 iframeDoc.open();
                 iframeDoc.write(
-                    '<!DOCTYPE html><html lang="' +
-                    Print.opts.lang +
-                    '"dir="' +
-                    Print.opts.dir +
-                    '"><head><meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible"content="IE=edge"/><meta name="viewport"content="width=device-width, initial-scale=1.0"/>' +
-                    Print.opts.css
-                    .map((link) => {
-                        if (link.startsWith("<style>")) return link;
-                        return `<link rel="stylesheet"href="${link}"/>`;
+                    $tempkate({
+                        ...Print.opts,
+                        page: page.innerHTML,
+                        css: Print.opts.css.join(""),
                     })
-                    .join("") +
-                    "<style>@page{size:" +
-                    Print.opts.size +
-                    ";margin:" +
-                    Print.opts.margin +
-                    ";}table#page{width:100%}</style></head><body>" +
-                    (Print.opts.bg ? Print.opts.bg : "") +
-                    "<table id='page'><thead><tr><td><header></header></td></tr></thead><tbody><tr><td><main>" +
-                    page.innerHTML +
-                    "</main></td></tr></tbody><tfoot><tr><td><footer></footer></td></tr></tfoot></table></body></html>"
                 );
                 iframeDoc.close();
                 iframe.onload = function() {
@@ -374,17 +364,21 @@ const x = (function() {
             clear && page.remove();
             exec && $callable();
 
-            document.querySelectorAll(trigger).forEach((el) => el.addEventListener("click", $callable));
+            trigger && document.querySelectorAll(trigger).forEach((el) => el.addEventListener("click", $callable));
 
             return this;
         }
 
         Print.opts = {
-            bg: false,
+            bg: "",
             css: [],
             dir: "ltr",
             lang: "en",
-            size: "A4",
+            size: {
+                page: "A4",
+                head: 0,
+                foot: 0,
+            },
             margin: "5mm 5mm 5mm 5mm",
         };
 

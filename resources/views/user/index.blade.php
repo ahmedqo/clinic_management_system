@@ -97,9 +97,11 @@
     </div>
 
     <section id="page" class="w-full hidden">
+        <img src="{{ asset('img/logo.png') }}?v={{ env('APP_VERSION') }}"
+            class="fixed w-full h-full block inset-0 object-contain object-center opacity-5 z-[-1]" />
         <div class="flex flex-col">
-            <h1 class="text-x-black font-x-core text-2xl p-4 leading-[1]">{{ __('Users List') }}</h1>
-            <div class="border-x-shade border-t border-b w-full">
+            <h1 class="text-x-black font-x-core text-2xl mb-4 leading-[1]">{{ __('Users List') }}</h1>
+            <div class="border-x-shade border w-full rounded-sm">
                 <table class="w-full">
                     @if ($data->count())
                         <thead>
@@ -156,9 +158,9 @@
 
 @section('scripts')
     <script>
-        x.Print.opts.bg =
-            `<img src="{{ asset('img/logo.png') }}?v={{ env('APP_VERSION') }}" class="fixed w-full h-full block inset-0 object-contain object-center opacity-5 z-[-1]" />`;
-        x.DataTable().Switch().Print("#page", "#print");
+        x.DataTable().Switch().Print("#page", {
+            trigger: "#print"
+        });
 
         function changeStatus(e) {
             const url = "{{ route('actions.users.status', ':id') }}".replace(/:id/g, e.target.value);

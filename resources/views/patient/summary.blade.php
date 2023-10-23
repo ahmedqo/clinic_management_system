@@ -746,84 +746,84 @@
     </div>
 
     <section id="page" class="w-full hidden">
+        <img src="{{ asset('img/logo.png') }}?v={{ env('APP_VERSION') }}"
+            class="fixed w-full h-full block inset-0 object-contain object-center opacity-5 z-[-1]" />
         <div class="flex flex-col">
-            <h1 class="text-x-black font-x-core text-4xl text-center p-4 leading-[1]">{{ __('Patient Summary') }}</h1>
+            <h1 class="text-x-black font-x-core text-4xl text-center mb-4 leading-[1]">{{ __('Patient Summary') }}</h1>
 
-            <div class="w-full flex flex-col gap-4 p-4">
-                <h2 class="text-x-black font-x-core text-2xl">{{ __('General Info') }}</h2>
-                <div class="w-full grid grid-rows-1 grid-cols-8 gap-6">
-                    <div class="flex flex-col gap-1 col-span-2">
-                        <label class="text-x-black font-x-core text-sm">#</label>
-                        <div class="text-x-black text-base w-full">
-                            {{ $data->id }}
-                        </div>
+            <h2 class="text-x-black font-x-core text-2xl my-4 leading-[1]">{{ __('General Info') }}</h2>
+            <div class="w-full grid grid-rows-1 grid-cols-8 gap-6">
+                <div class="flex flex-col gap-1 col-span-2">
+                    <label class="text-x-black font-x-core text-sm">#</label>
+                    <div class="text-x-black text-base w-full">
+                        {{ $data->id }}
                     </div>
-                    <div class="flex flex-col gap-1 col-span-6">
-                        <label class="text-x-black font-x-core text-sm">{{ __('Full Name') }}</label>
-                        <div class="text-x-black text-base w-full">
-                            {{ strtoupper($data->last_name) }} {{ ucfirst($data->first_name) }}
-                        </div>
+                </div>
+                <div class="flex flex-col gap-1 col-span-6">
+                    <label class="text-x-black font-x-core text-sm">{{ __('Full Name') }}</label>
+                    <div class="text-x-black text-base w-full">
+                        {{ strtoupper($data->last_name) }} {{ ucfirst($data->first_name) }}
                     </div>
-                    <div class="flex flex-col gap-1 col-span-2">
-                        <label class="text-x-black font-x-core text-sm">{{ __('Gender') }}</label>
-                        <div class="text-x-black text-base w-full">
-                            {{ ucwords(__($data->gender) ?? '___') }}
-                        </div>
+                </div>
+                <div class="flex flex-col gap-1 col-span-2">
+                    <label class="text-x-black font-x-core text-sm">{{ __('Gender') }}</label>
+                    <div class="text-x-black text-base w-full">
+                        {{ ucwords(__($data->gender) ?? '___') }}
                     </div>
-                    <div class="flex flex-col gap-1 col-span-2">
-                        <label class="text-x-black font-x-core text-sm">{{ __('Birth Date') }}</label>
-                        <div class="text-x-black text-base w-full">
-                            {{ $data->birth_date ?? '___' }}
-                        </div>
+                </div>
+                <div class="flex flex-col gap-1 col-span-2">
+                    <label class="text-x-black font-x-core text-sm">{{ __('Birth Date') }}</label>
+                    <div class="text-x-black text-base w-full">
+                        {{ $data->birth_date ?? '___' }}
                     </div>
-                    <div class="flex flex-col gap-1 col-span-2">
-                        <label class="text-x-black font-x-core text-sm">{{ __('Nationality') }}</label>
-                        <div class="text-x-black text-base w-full">
-                            {{ $data->nationality ?? '___' }}
-                        </div>
+                </div>
+                <div class="flex flex-col gap-1 col-span-2">
+                    <label class="text-x-black font-x-core text-sm">{{ __('Nationality') }}</label>
+                    <div class="text-x-black text-base w-full">
+                        {{ $data->nationality ?? '___' }}
                     </div>
-                    <div class="flex flex-col gap-1 col-span-2">
-                        <label class="text-x-black font-x-core text-sm">{{ __('Identity') }}</label>
-                        <div class="text-x-black text-base w-full">
-                            {{ $data->identity ?? '___' }}
-                        </div>
+                </div>
+                <div class="flex flex-col gap-1 col-span-2">
+                    <label class="text-x-black font-x-core text-sm">{{ __('Identity') }}</label>
+                    <div class="text-x-black text-base w-full">
+                        {{ $data->identity ?? '___' }}
                     </div>
-                    <div class="flex flex-col gap-1 col-span-4">
-                        <label class="text-x-black font-x-core text-sm">{{ __('Insurance Provider') }}</label>
-                        <div class="text-x-black text-base w-full">
-                            {{ $data->insurance_provider ?? '___' }}
-                        </div>
+                </div>
+                <div class="flex flex-col gap-1 col-span-4">
+                    <label class="text-x-black font-x-core text-sm">{{ __('Insurance Provider') }}</label>
+                    <div class="text-x-black text-base w-full">
+                        {{ $data->insurance_provider ?? '___' }}
                     </div>
-                    <div class="flex flex-col gap-1 col-span-4">
-                        <label class="text-x-black font-x-core text-sm">{{ __('Insurance Number') }}</label>
-                        <div class="text-x-black text-base w-full">
-                            {{ $data->insurance_number ?? '___' }}
-                        </div>
+                </div>
+                <div class="flex flex-col gap-1 col-span-4">
+                    <label class="text-x-black font-x-core text-sm">{{ __('Insurance Number') }}</label>
+                    <div class="text-x-black text-base w-full">
+                        {{ $data->insurance_number ?? '___' }}
                     </div>
-                    <div class="flex flex-col gap-1 col-span-4">
-                        <label class="text-x-black font-x-core text-sm">{{ __('Email') }}</label>
-                        <div class="text-x-black text-base w-full">
-                            {{ $data->email ?? '___' }}
-                        </div>
+                </div>
+                <div class="flex flex-col gap-1 col-span-4">
+                    <label class="text-x-black font-x-core text-sm">{{ __('Email') }}</label>
+                    <div class="text-x-black text-base w-full">
+                        {{ $data->email ?? '___' }}
                     </div>
-                    <div class="flex flex-col gap-1 col-span-4">
-                        <label class="text-x-black font-x-core text-sm">{{ __('Phone') }}</label>
-                        <div class="text-x-black text-base w-full">
-                            {{ $data->phone ?? '___' }}
-                        </div>
+                </div>
+                <div class="flex flex-col gap-1 col-span-4">
+                    <label class="text-x-black font-x-core text-sm">{{ __('Phone') }}</label>
+                    <div class="text-x-black text-base w-full">
+                        {{ $data->phone ?? '___' }}
                     </div>
-                    <div class="flex flex-col gap-1 col-span-8">
-                        <label class="text-x-black font-x-core text-sm">{{ __('Address') }}</label>
-                        <div class="text-x-black text-base w-full">
-                            {{ $data->address ?? '___' }}, {{ $data->state ?? '___' }}, {{ $data->city ?? '___' }},
-                            {{ $data->zipcode ?? '___' }}
-                        </div>
+                </div>
+                <div class="flex flex-col gap-1 col-span-8">
+                    <label class="text-x-black font-x-core text-sm">{{ __('Address') }}</label>
+                    <div class="text-x-black text-base w-full">
+                        {{ $data->address ?? '___' }}, {{ $data->state ?? '___' }}, {{ $data->city ?? '___' }},
+                        {{ $data->zipcode ?? '___' }}
                     </div>
                 </div>
             </div>
 
-            <h2 class="text-x-black font-x-core text-2xl p-4 leading-[1]">{{ __('Appointments List') }}</h2>
-            <div class="border-x-shade border-t border-b w-full">
+            <h2 class="text-x-black font-x-core text-2xl my-4 leading-[1]">{{ __('Appointments List') }}</h2>
+            <div class="border-x-shade border w-full rounded-sm">
                 <table class="w-full">
                     @if ($data->appointments()->count())
                         <thead>
@@ -874,8 +874,8 @@
                 </table>
             </div>
 
-            <h2 class="text-x-black font-x-core text-2xl p-4 leading-[1]">{{ __('Contacts List') }}</h2>
-            <div class="border-x-shade border-t border-b w-full">
+            <h2 class="text-x-black font-x-core text-2xl my-4 leading-[1]">{{ __('Contacts List') }}</h2>
+            <div class="border-x-shade border w-full rounded-sm">
                 <table class="w-full">
                     @if ($data->contacts()->count())
                         <thead>
@@ -912,8 +912,8 @@
                 </table>
             </div>
 
-            <h2 class="text-x-black font-x-core text-2xl p-4 leading-[1]">{{ __('Records List') }}</h2>
-            <div class="border-x-shade border-t border-b w-full">
+            <h2 class="text-x-black font-x-core text-2xl my-4 leading-[1]">{{ __('Records List') }}</h2>
+            <div class="border-x-shade border w-full rounded-sm">
                 <table class="w-full">
                     @if ($data->records()->count())
                         <thead>
@@ -948,8 +948,8 @@
                 </table>
             </div>
 
-            <h2 class="text-x-black font-x-core text-2xl p-4 leading-[1]">{{ __('Entries List') }}</h2>
-            <div class="border-x-shade border-t border-b w-full">
+            <h2 class="text-x-black font-x-core text-2xl my-4 leading-[1]">{{ __('Entries List') }}</h2>
+            <div class="border-x-shade border w-full rounded-sm">
                 <table class="w-full">
                     @if ($data->entries()->count())
                         <thead>
@@ -988,8 +988,8 @@
                 </table>
             </div>
 
-            <h2 class="text-x-black font-x-core text-2xl p-4 leading-[1]">{{ __('Prescriptions List') }}</h2>
-            <div class="border-x-shade border-t border-b w-full">
+            <h2 class="text-x-black font-x-core text-2xl my-4 leading-[1]">{{ __('Prescriptions List') }}</h2>
+            <div class="border-x-shade border w-full rounded-sm">
                 <table class="w-full">
                     @if ($data->prescriptions()->count())
                         <thead>
@@ -1068,8 +1068,8 @@
                 </table>
             </div>
 
-            <h2 class="text-x-black font-x-core text-2xl p-4 leading-[1]">{{ __('Invoices List') }}</h2>
-            <div class="border-x-shade border-t border-b w-full">
+            <h2 class="text-x-black font-x-core text-2xl my-4 leading-[1]">{{ __('Invoices List') }}</h2>
+            <div class="border-x-shade border w-full rounded-sm">
                 <table class="w-full">
                     @if ($data->invoices()->count())
                         <thead>
@@ -1148,9 +1148,9 @@
 
 @section('scripts')
     <script>
-        x.Print.opts.bg =
-            `<img src="{{ asset('img/logo.png') }}?v={{ env('APP_VERSION') }}" class="fixed w-full h-full block inset-0 object-contain object-center opacity-5 z-[-1]" />`;
-        x.DataTable().Print("#page", ".print");;
+        x.DataTable().Print("#page", {
+            trigger: ".print"
+        });
         const links = [...document.querySelectorAll('.link')];
         const tabs = [...document.querySelectorAll('.tab')];
 

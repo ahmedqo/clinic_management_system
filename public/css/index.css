@@ -706,10 +706,6 @@ video {
   grid-column: span 2 / span 2;
 }
 
-.col-span-3 {
-  grid-column: span 3 / span 3;
-}
-
 .col-span-4 {
   grid-column: span 4 / span 4;
 }
@@ -735,6 +731,11 @@ video {
   margin-right: auto;
 }
 
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .-ml-px {
   margin-left: -1px;
 }
@@ -745,6 +746,10 @@ video {
 
 .mb-1 {
   margin-bottom: 0.25rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .mb-6 {
@@ -1072,10 +1077,6 @@ video {
 
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.grid-cols-6 {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .grid-cols-7 {
@@ -1766,16 +1767,12 @@ video {
   opacity: 0.4;
 }
 
-.opacity-80 {
-  opacity: 0.8;
-}
-
-.opacity-10 {
-  opacity: 0.1;
-}
-
 .opacity-5 {
   opacity: 0.05;
+}
+
+.opacity-80 {
+  opacity: 0.8;
 }
 
 .shadow {

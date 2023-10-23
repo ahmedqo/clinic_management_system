@@ -88,6 +88,10 @@
     </div>
 
     <section id="page" class="w-full hidden">
+        @if (env('PRINT_IMAGE'))
+            <img src="{{ asset(env('PRINT_IMAGE')) }}?v={{ env('APP_VERSION') }}"
+                class="fixed w-full h-full block inset-0 object-contain object-center z-[-1]" />
+        @endif
         <div class="grid grid-rows-1 grid-cols-2 items-center justify-between gap-6 mb-6">
             <h1 class="text-2xl font-x-core text-x-black text-center col-span-2 leading-[1]">
                 {{ __('Invoice') }}
@@ -145,26 +149,17 @@
 
 @section('scripts')
     <script>
-        x.Print.opts.size = "A5";
+        x.Print.opts.size.page = "A5";
         @if (env('PRINT_IMAGE'))
-            x.Print.opts.css = [...x.Print.opts.css, `<style>
-                @media print {
-                    table#page thead td header {
-                        height: 34mm;
-                    }
-                    table#page tfoot td footer {
-                        height: 38mm;
-                    }
-                    table#page tbody td main {
-                        margin: 5mm 20mm 5mm 20mm;
-                    }
-                }
-                </style>`]
-            x.Print.opts.bg =
-                `<img src="{{ asset(env('PRINT_IMAGE')) }}?v={{ env('APP_VERSION') }}" class="fixed w-full h-full block inset-0 object-contain object-center z-[-1]" />`;
-        @else
-            x.Print.opts.margin = "10mm 10mm 10mm 10mm";
+            x.Print.opts.size.head = "34mm";
+            x.Print.opts.size.foot = "38mm";
+            x.Print.opts.margin = "0 0 0 0";
+            x.Print.opts.css = [...x.Print.opts.css,
+                `<style>#main{margin:5mm 20mm 5mm 20mm}</style>`
+            ];
         @endif
-        x.DataTable().Print("#page", "#print");;
+        x.DataTable().Print("#page", {
+            trigger: "#print"
+        });;
     </script>
 @endsection
