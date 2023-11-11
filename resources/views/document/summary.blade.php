@@ -1201,7 +1201,7 @@
 
 @section('scripts')
     <script>
-        var COLOR = "#0078d7";
+        var COLOR = "#000000";
         const DOC = document.documentElement;
         const DOWNLOAD = document.createElement("a");
         const CANVAS = document.createElement("canvas");
@@ -1240,7 +1240,18 @@
             const canvases = document.querySelectorAll("#graph canvas");
             if (canvases.length) {
                 canvases.forEach(canvas => {
-                    CONTEXT.drawImage(canvas, 0, 0);
+                      const factor = Math.min(
+          CANVAS.width / canvas.width,
+          CANVAS.height / canvas.height
+        );
+
+        CONTEXT.drawImage(
+          canvas,
+          CANVAS.width / 2 - (canvas.width * factor) / 2,
+          CANVAS.height / 2 - (canvas.height * factor) / 2,
+          canvas.width * factor,
+          canvas.height * factor
+        );
                 });
             }
 

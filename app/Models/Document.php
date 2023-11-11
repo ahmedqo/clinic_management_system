@@ -11,7 +11,7 @@ class Document extends Model
 
     protected $fillable = [
         'patient',
-        //'origin',
+        'origin',
         'type',
         'name',
         'mime',

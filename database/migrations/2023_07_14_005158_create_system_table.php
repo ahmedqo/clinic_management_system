@@ -17,13 +17,13 @@ class CreateSystemTable extends Migration
         Schema::create('system', function (Blueprint $table) {
             $table->id();
             $table->string('work_days')->default('monday,tuesday,wednesday,thursday,friday');
-            $table->string('work_start')->default('08:00:00');
-            $table->string('work_end')->default('18:00:00');
-            $table->string('break_start')->default('12:00:00');
-            $table->string('break_end')->default('14:00:00');
+            $table->time('work_start')->default('08:00:00');
+            $table->time('work_end')->default('18:00:00');
+            $table->time('break_start')->default('12:00:00');
+            $table->time('break_end')->default('14:00:00');
             $table->string('currency')->default('$');
             $table->integer('slot')->default(30);
-            $table->float('cost')->default(100);
+            $table->float('cost', 15, 5)->default(100);
             $table->enum('report', Core::report())->default('week');
         });
     }

@@ -22,7 +22,7 @@ class DocumentController extends Controller
             Document::create([
                 'patient' => $patient,
                 'type' => $category,
-                //'origin' => $orgn,
+                'origin' => $orgn,
                 'name' => $name,
                 'mime' => $type,
                 'size' => $size

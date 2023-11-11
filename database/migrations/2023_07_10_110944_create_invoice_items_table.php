@@ -17,7 +17,7 @@ class CreateInvoiceItemsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('invoice');
             $table->string('content');
-            $table->float('cost');
+            $table->float('cost', 15, 5);
             $table->timestamps();
             $table->foreign('invoice')->references('id')->on('invoices')->onUpdate('cascade')->onDelete('cascade');
         });

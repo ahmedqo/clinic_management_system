@@ -53,7 +53,7 @@
                             <td>
                                 <a href="{{ asset('storage/documents/' . $row->name) }}" download
                                     class="hover:underline focus-within:underline outline-none">
-                                    {{ $row->name }}
+                                    {{ $row->origin }}
                                 </a>
                             </td>
                             <td>{{ $row->mime }}</td>

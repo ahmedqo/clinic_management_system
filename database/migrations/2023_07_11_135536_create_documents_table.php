@@ -20,7 +20,7 @@ class CreateDocumentsTable extends Migration
             $table->string('type');
             $table->string('name');
             $table->string('mime');
-            $table->decimal('size', 15, 5);
+            $table->float('size', 15, 5);
             $table->timestamps();
 
             $table->foreign('patient')->references('id')->on('patients')->onUpdate('cascade')->onDelete('cascade');
