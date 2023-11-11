@@ -60,8 +60,8 @@
                             <td>{{ $row->items()->count() }} {{ __('Items') }}</td>
                             <td>{{ $row->items()->sum('cost') }} {{ Core::system()->currency }}</td>
                             <td>{{ ucwords(__($row->payment)) }}</td>
-                            <td class="hidden">{{ $row->note ?? '___' }}</td>
-                            <td>{{ $row->created_at->diffForHumans() }}</td>
+                            <td class="hidden">{{ $row->note ?? '__' }}</td>
+                            <td>{{ $row->created_at }}</td>
                             <td>
                                 @include('shared.admin.action', [
                                     'view' => route('views.invoices.summary', $row->id),

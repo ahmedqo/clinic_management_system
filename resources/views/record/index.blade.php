@@ -57,7 +57,7 @@
                             </td>
                             <td>{{ ucwords(__($row->type)) }}</td>
                             <td>{{ $row->content }}</td>
-                            <td>{{ $row->created_at->diffForHumans() }}</td>
+                            <td>{{ $row->created_at }}</td>
                             <td>
                                 @include('shared.admin.action', [
                                     'update' => route('views.records.update', $row->id),

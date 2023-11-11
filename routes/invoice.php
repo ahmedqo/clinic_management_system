@@ -11,4 +11,4 @@ Route::get('/invoices/{id}/summary', [InvoiceController::class, 'summary_view'])
 
 Route::post('/invoices/create', [InvoiceController::class, 'create_action'])->name('actions.invoices.create');
 Route::post('/invoices/{id}/update', [InvoiceController::class, 'update_action'])->name('actions.invoices.update');
-Route::get('/invoices/{id}/delete', [InvoiceController::class, 'delete_action'])->name('actions.invoices.delete');
+Route::delete('/invoices/{id}/delete', [InvoiceController::class, 'delete_action'])->name('actions.invoices.delete');

@@ -56,8 +56,8 @@
                                 {{ strtoupper($row->patient()->last_name) }} {{ ucfirst($row->patient()->first_name) }}
                             </td>
                             <td>{{ $row->items()->count() }} {{ __('Items') }}</td>
-                            <td class="hidden">{{ $row->note ?? '___' }}</td>
-                            <td>{{ $row->created_at->diffForHumans() }}</td>
+                            <td class="hidden">{{ $row->note ?? '__' }}</td>
+                            <td>{{ $row->created_at }}</td>
                             <td>
                                 @include('shared.admin.action', [
                                     'view' => route('views.prescriptions.summary', $row->id),
@@ -134,7 +134,7 @@
                                                     </td>
                                                     <td class="text-x-black text-base p-2">{{ $item->content }}</td>
                                                     <td class="text-x-black text-base p-2 pe-8">
-                                                        {{ $item->note ?? '___' }}
+                                                        {{ $item->note ?? '__' }}
                                                     </td>
                                                 </tr>
                                             @endforeach

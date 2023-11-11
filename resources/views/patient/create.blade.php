@@ -104,6 +104,101 @@
                     <input id="zipcode" type="text" name="zipcode" placeholder="{{ __('Zipcode') }}"
                         class="bg-x-light text-x-black border-x-shade focus-within:outline-x-prime p-2 text-base border rounded-md focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2" />
                 </div>
+                <div class="flex flex-col gap-px lg:col-span-6">
+                    <label class="text-x-black font-x-core text-sm">{{ __('Contacts') }}</label>
+                    <div class="grid grid-rows-1 grid-cols-1 lg:grid-cols-6 gap-4 lg:gap-[5px]">
+                        <div class="bg-x-light border-x-shade border rounded-md w-full overflow-auto lg:col-span-6">
+                            <table class="w-max min-w-full">
+                                <thead>
+                                    <tr>
+                                        <td class="text-x-black text-sm font-x-core p-2">
+                                            {{ __('First Name') }}
+                                        </td>
+                                        <td class="text-x-black text-sm font-x-core p-2">
+                                            {{ __('Last Name') }}
+                                        </td>
+                                        <td class="text-x-black text-sm font-x-core p-2">{{ __('Phone') }}</td>
+                                        <td class="text-x-black text-sm font-x-core p-2">{{ __('Email') }}</td>
+                                        <td class="text-x-black text-sm font-x-core p-2 w-[80px]"></td>
+                                    </tr>
+                                </thead>
+                                <tbody id="contact_display">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="flex flex-col gap-4 lg:gap-[5px] lg:flex-row lg:flex-wrap lg:col-span-6">
+                            <div class="lg:flex-1">
+                                <input id="contact_first" placeholder="{{ __('First Name') }}"
+                                    class="bg-x-light w-full text-x-black border-x-shade focus-within:outline-x-prime p-2 text-base border rounded-md focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2" />
+                            </div>
+                            <div class="lg:flex-1">
+                                <input id="contact_last" placeholder="{{ __('Last Name') }}"
+                                    class="bg-x-light w-full text-x-black border-x-shade focus-within:outline-x-prime p-2 text-base border rounded-md focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2" />
+                            </div>
+                            <div class="lg:flex-1">
+                                <input id="contact_phone" type="tel" placeholder="{{ __('Phone') }}"
+                                    class="bg-x-light w-full text-x-black border-x-shade focus-within:outline-x-prime p-2 text-base border rounded-md focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2" />
+                            </div>
+                            <div class="lg:flex-1">
+                                <input id="contact_email" type="email" placeholder="{{ __('Email') }}"
+                                    class="bg-x-light w-full text-x-black border-x-shade focus-within:outline-x-prime p-2 text-base border rounded-md focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2" />
+                            </div>
+                            <button type="button" onclick="addContactRow()"
+                                class="lg:w-[80px] flex gap-2 items-center justify-center font-x-core text-sm rounded-md bg-blue-400 text-x-white relative p-2 lg:px-4 h-[42px] aspect-square lg:aspect-auto outline-none hover:!text-x-black hover:bg-blue-300 focus-within:!text-x-black focus-within:bg-blue-300">
+                                <svg class="block w-5 h-5 pointer-events-none" fill="currentcolor"
+                                    viewBox="0 -960 960 960">
+                                    <path
+                                        d="M479.825-185q-18.45 0-31.637-12.625Q435-210.25 435-231v-203H230q-18.375 0-31.688-13.56Q185-461.119 185-479.86q0-20.14 13.312-32.64Q211.625-525 230-525h205v-205q0-19.775 13.358-32.388Q461.716-775 480.158-775t32.142 12.612Q526-749.775 526-730v205h204q18.8 0 32.4 12.675 13.6 12.676 13.6 32.316 0 19.641-13.6 32.825Q748.8-434 730-434H526v203q0 20.75-13.65 33.375Q498.699-185 479.825-185Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-px lg:col-span-6">
+                    <label class="text-x-black font-x-core text-sm">{{ __('Records') }}</label>
+                    <div class="grid grid-rows-1 grid-cols-1 lg:grid-cols-6 gap-4 lg:gap-[5px]">
+                        <div class="bg-x-light border-x-shade border rounded-md w-full overflow-auto lg:col-span-6">
+                            <table class="w-max min-w-full">
+                                <thead>
+                                    <tr>
+                                        <td class="text-x-black text-sm font-x-core p-2">
+                                            {{ __('Type') }}
+                                        </td>
+                                        <td class="text-x-black text-sm font-x-core p-2">
+                                            {{ __('Content') }}
+                                        </td>
+                                        <td class="text-x-black text-sm font-x-core p-2 w-[80px]"></td>
+                                    </tr>
+                                </thead>
+                                <tbody id="record_display">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="flex flex-col gap-4 lg:gap-[5px] lg:flex-row lg:flex-wrap lg:col-span-6">
+                            <div class="lg:flex-1">
+                                <select x-select search id="record_type" placeholder="{{ __('Type') }}">
+                                    @foreach (Core::record() as $type)
+                                        <option value="{{ $type }}">
+                                            {{ ucwords(__($type)) }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="lg:flex-[2]">
+                                <input id="record_content" type="tel" placeholder="{{ __('Content') }}"
+                                    class="bg-x-light w-full text-x-black border-x-shade focus-within:outline-x-prime p-2 text-base border rounded-md focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2" />
+                            </div>
+                            <button type="button" onclick="addRecordRow()"
+                                class="lg:w-[80px] flex gap-2 items-center justify-center font-x-core text-sm rounded-md bg-blue-400 text-x-white relative p-2 lg:px-4 h-[42px] aspect-square lg:aspect-auto outline-none hover:!text-x-black hover:bg-blue-300 focus-within:!text-x-black focus-within:bg-blue-300">
+                                <svg class="block w-5 h-5 pointer-events-none" fill="currentcolor"
+                                    viewBox="0 -960 960 960">
+                                    <path
+                                        d="M479.825-185q-18.45 0-31.637-12.625Q435-210.25 435-231v-203H230q-18.375 0-31.688-13.56Q185-461.119 185-479.86q0-20.14 13.312-32.64Q211.625-525 230-525h205v-205q0-19.775 13.358-32.388Q461.716-775 480.158-775t32.142 12.612Q526-749.775 526-730v205h204q18.8 0 32.4 12.675 13.6 12.676 13.6 32.316 0 19.641-13.6 32.825Q748.8-434 730-434H526v203q0 20.75-13.65 33.375Q498.699-185 479.825-185Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
@@ -116,6 +211,20 @@
             form = document.querySelector("#form");
         save.addEventListener("click", e => {
             form.submit();
+        });
+
+        const [addContactRow] = contactItemRow({
+            display: "#contact_display",
+            first: "#contact_first",
+            last: "#contact_last",
+            phone: "#contact_phone",
+            email: "#contact_email",
+        });
+
+        const [addRecordRow] = recordItemRow({
+            display: "#record_display",
+            type: "#record_type",
+            content: "#record_content",
         });
     </script>
 @endsection

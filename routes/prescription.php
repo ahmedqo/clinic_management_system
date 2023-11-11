@@ -11,4 +11,4 @@ Route::get('/prescriptions/{id}/summary', [PrescriptionController::class, 'summa
 
 Route::post('/prescriptions/create', [PrescriptionController::class, 'create_action'])->name('actions.prescriptions.create');
 Route::post('/prescriptions/{id}/update', [PrescriptionController::class, 'update_action'])->name('actions.prescriptions.update');
-Route::get('/prescriptions/{id}/delete', [PrescriptionController::class, 'delete_action'])->name('actions.prescriptions.delete');
+Route::delete('/prescriptions/{id}/delete', [PrescriptionController::class, 'delete_action'])->name('actions.prescriptions.delete');

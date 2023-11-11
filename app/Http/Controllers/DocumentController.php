@@ -15,12 +15,14 @@ class DocumentController extends Controller
     {
         foreach ($docs as $doc) {
             $name = substr(Storage::putFile('public/documents', $doc), strlen('public/documents/'));
+            $orgn =  $doc->getClientOriginalName();
             $type = $doc->getClientMimeType();
             $size = $doc->getSize();
 
             Document::create([
                 'patient' => $patient,
                 'type' => $category,
+                //'origin' => $orgn,
                 'name' => $name,
                 'mime' => $type,
                 'size' => $size
@@ -38,6 +40,12 @@ class DocumentController extends Controller
     {
         $patients = Patient::orderBy('id', 'DESC')->get();
         return view('document.create', compact('patients'));
+    }
+
+    public function summary_view($id)
+    {
+        $data = Document::findorfail($id);
+        return view('document.summary', compact('data'));
     }
 
     public function create_action(Request $request)

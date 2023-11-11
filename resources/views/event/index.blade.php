@@ -56,17 +56,17 @@
                             </td>
                             <td>{{ ucwords(__($row->type)) }}</td>
                             <td>
-                                {{ \Carbon\Carbon::parse($row->start_date . 'T' . $row->start_time)->diffForHumans() }}
+                                {{ $row->start_date }} {{ $row->start_time }}
                             </td>
                             <td>
-                                {{ \Carbon\Carbon::parse($row->end_date . 'T' . $row->end_time)->diffForHumans() }}
+                                {{ $row->end_date }} {{ $row->end_time }}
                             </td>
                             <td>
                                 {{ \Carbon\Carbon::parse($row->start_date . 'T' . $row->start_time)->diffInDays(\Carbon\Carbon::parse($row->end_date . 'T' . $row->end_time)) }}
                                 {{ __('Days') }}
                             </td>
-                            <td class="hidden">{{ $row->note ?? '___' }}</td>
-                            <td>{{ $row->created_at->diffForHumans() }}</td>
+                            <td class="hidden">{{ $row->note ?? '__' }}</td>
+                            <td>{{ $row->created_at }}</td>
                             <td>
                                 @include('shared.admin.action', [
                                     'update' => route('views.events.update', $row->id),

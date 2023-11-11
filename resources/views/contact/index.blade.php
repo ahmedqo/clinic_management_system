@@ -58,8 +58,8 @@
                             <td>
                                 {{ strtoupper($row->last_name) }} {{ ucfirst($row->first_name) }}
                             </td>
-                            <td>{{ $row->phone ?? '___' }}</td>
-                            <td>{{ $row->email ?? '___' }}</td>
+                            <td>{{ $row->phone ?? '__' }}</td>
+                            <td>{{ $row->email ?? '__' }}</td>
                             <td>
                                 @include('shared.admin.action', [
                                     'update' => route('views.contacts.update', $row->id),
@@ -106,8 +106,8 @@
                                 <td class="text-x-black text-base p-2">
                                     {{ strtoupper($row->last_name) }}
                                     {{ ucfirst($row->first_name) }}</td>
-                                <td class="text-x-black text-base p-2">{{ $row->phone ?? '___' }}</td>
-                                <td class="text-x-black text-base p-2 pe-4">{{ $row->email ?? '___' }}</td>
+                                <td class="text-x-black text-base p-2">{{ $row->phone ?? '__' }}</td>
+                                <td class="text-x-black text-base p-2 pe-4">{{ $row->email ?? '__' }}</td>
                             </tr>
                         @empty
                             <tr>

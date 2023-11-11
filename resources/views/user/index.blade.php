@@ -66,15 +66,15 @@
                                 </span>
                             </td>
                             <td>{{ strtoupper($row->last_name) }} {{ ucfirst($row->first_name) }}</td>
-                            <td>{{ ucwords(__($row->gender) ?? '___') }}</td>
-                            <td class="hidden">{{ $row->birth_date ?? '___' }}</td>
-                            <td class="hidden">{{ $row->nationality ?? '___' }}</td>
-                            <td class="hidden">{{ $row->identity ?? '___' }}</td>
-                            <td>{{ $row->phone ?? '___' }}</td>
-                            <td>{{ $row->email ?? '___' }}</td>
+                            <td>{{ ucwords(__($row->gender) ?? '__') }}</td>
+                            <td class="hidden">{{ $row->birth_date ?? '__' }}</td>
+                            <td class="hidden">{{ $row->nationality ?? '__' }}</td>
+                            <td class="hidden">{{ $row->identity ?? '__' }}</td>
+                            <td>{{ $row->phone ?? '__' }}</td>
+                            <td>{{ $row->email ?? '__' }}</td>
                             <td class="hidden">
-                                {{ $row->address ?? '___' }}, {{ $row->state ?? '___' }},
-                                {{ $row->city ?? '___' }}, {{ $row->zipcode ?? '___' }}
+                                {{ $row->address ?? '__' }}, {{ $row->state ?? '__' }},
+                                {{ $row->city ?? '__' }}, {{ $row->zipcode ?? '__' }}
                             </td>
                             <td>
                                 <input x-switch onchange="changeStatus(event)" type="checkbox" name="switch"
@@ -131,14 +131,14 @@
                                     {{ strtoupper($row->last_name) }}
                                     {{ ucfirst($row->first_name) }}
                                 </td>
-                                <td class="text-x-black text-base p-2">{{ ucwords(__($row->gender) ?? '___') }}</td>
-                                <td class="text-x-black text-base p-2">{{ $row->birth_date ?? '___' }}</td>
-                                <td class="text-x-black text-base p-2">{{ $row->nationality ?? '___' }}</td>
-                                <td class="text-x-black text-base p-2">{{ $row->identity ?? '___' }}</td>
-                                <td class="text-x-black text-base p-2">{{ $row->email ?? '___' }}</td>
-                                <td class="text-x-black text-base p-2">{{ $row->email ?? '___' }}</td>
-                                <td class="text-x-black text-base p-2">{{ $row->address ?? '___' }},
-                                    {{ $row->state ?? '___' }}, {{ $row->city ?? '___' }}, {{ $row->zipcode ?? '___' }}
+                                <td class="text-x-black text-base p-2">{{ ucwords(__($row->gender) ?? '__') }}</td>
+                                <td class="text-x-black text-base p-2">{{ $row->birth_date ?? '__' }}</td>
+                                <td class="text-x-black text-base p-2">{{ $row->nationality ?? '__' }}</td>
+                                <td class="text-x-black text-base p-2">{{ $row->identity ?? '__' }}</td>
+                                <td class="text-x-black text-base p-2">{{ $row->email ?? '__' }}</td>
+                                <td class="text-x-black text-base p-2">{{ $row->email ?? '__' }}</td>
+                                <td class="text-x-black text-base p-2">{{ $row->address ?? '__' }},
+                                    {{ $row->state ?? '__' }}, {{ $row->city ?? '__' }}, {{ $row->zipcode ?? '__' }}
                                 </td>
                                 <td class="text-x-black text-base p-2 pe-4">{{ $row->created_at }}</td>
                             </tr>

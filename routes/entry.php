@@ -10,4 +10,4 @@ Route::get('/entries/{id}/update', [EntryController::class, 'update_view'])->nam
 
 Route::post('/entries/create', [EntryController::class, 'create_action'])->name('actions.entries.create');
 Route::post('/entries/{id}/update', [EntryController::class, 'update_action'])->name('actions.entries.update');
-Route::get('/entries/{id}/delete', [EntryController::class, 'delete_action'])->name('actions.entries.delete');
+Route::delete('/entries/{id}/delete', [EntryController::class, 'delete_action'])->name('actions.entries.delete');

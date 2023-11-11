@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Functions\Core;
 use App\Models\Appointment;
 use App\Models\Patient;
 use Illuminate\Support\Facades\Validator;
@@ -73,7 +74,10 @@ class AppointmentController extends Controller
             ]);
         }
 
-        Appointment::findorfail($id)->update([
+        $current = Appointment::findorfail($id);
+        $status = $current->status;
+
+        $current->update([
             'patient' => $request->patient,
             'date' => $request->date,
             'time' => $request->time,
@@ -81,10 +85,17 @@ class AppointmentController extends Controller
             'status' => $request->status,
         ]);
 
-        return Redirect::back()->with([
-            'message' => __('Updated successfully'),
-            'type' => 'success'
-        ]);
+        $end = Core::status()[2];
+        if ($request->status == $end &&  $status != $end) {
+            return Redirect::route('views.invoices.create', [
+                'patient' => $request->patient
+            ]);
+        } else {
+            return Redirect::back()->with([
+                'message' => __('Updated successfully'),
+                'type' => 'success'
+            ]);
+        }
     }
 
     public function delete_action(Request $request, $id)

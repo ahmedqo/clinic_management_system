@@ -71,17 +71,17 @@
                                 </span>
                             </td>
                             <td>{{ strtoupper($row->last_name) }} {{ ucfirst($row->first_name) }}</td>
-                            <td class="hidden">{{ ucwords(__($row->gender) ?? '___') }}</td>
-                            <td class="hidden">{{ $row->birth_date ?? '___' }}</td>
-                            <td class="hidden">{{ $row->nationality ?? '___' }}</td>
-                            <td>{{ $row->identity ?? '___' }}</td>
-                            <td>{{ $row->insurance_provider ?? '___' }}</td>
-                            <td>{{ $row->insurance_number ?? '___' }}</td>
-                            <td>{{ $row->phone ?? '___' }}</td>
-                            <td class="hidden">{{ $row->email ?? '___' }}</td>
+                            <td class="hidden">{{ ucwords(__($row->gender) ?? '__') }}</td>
+                            <td class="hidden">{{ $row->birth_date ?? '__' }}</td>
+                            <td class="hidden">{{ $row->nationality ?? '__' }}</td>
+                            <td>{{ $row->identity ?? '__' }}</td>
+                            <td>{{ $row->insurance_provider ?? '__' }}</td>
+                            <td>{{ $row->insurance_number ?? '__' }}</td>
+                            <td>{{ $row->phone ?? '__' }}</td>
+                            <td class="hidden">{{ $row->email ?? '__' }}</td>
                             <td class="hidden">
-                                {{ $row->address ?? '___' }}, {{ $row->state ?? '___' }},
-                                {{ $row->city ?? '___' }}, {{ $row->zipcode ?? '___' }}
+                                {{ $row->address ?? '__' }}, {{ $row->state ?? '__' }},
+                                {{ $row->city ?? '__' }}, {{ $row->zipcode ?? '__' }}
                             </td>
                             <td>
                                 @include('shared.admin.action', [
@@ -128,10 +128,10 @@
                                 <td class="text-x-black text-base p-2">
                                     {{ strtoupper($row->last_name) }} {{ ucfirst($row->first_name) }}
                                 </td>
-                                <td class="text-x-black text-base p-2">{{ $row->identity ?? '___' }}</td>
-                                <td class="text-x-black text-base p-2">{{ $row->insurance_provider ?? '___' }}</td>
-                                <td class="text-x-black text-base p-2">{{ $row->insurance_number ?? '___' }}</td>
-                                <td class="text-x-black text-base p-2 me-4">{{ $row->phone ?? '___' }}</td>
+                                <td class="text-x-black text-base p-2">{{ $row->identity ?? '__' }}</td>
+                                <td class="text-x-black text-base p-2">{{ $row->insurance_provider ?? '__' }}</td>
+                                <td class="text-x-black text-base p-2">{{ $row->insurance_number ?? '__' }}</td>
+                                <td class="text-x-black text-base p-2 me-4">{{ $row->phone ?? '__' }}</td>
                             </tr>
                         @empty
                             <tr>

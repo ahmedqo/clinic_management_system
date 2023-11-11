@@ -123,6 +123,149 @@
                         value="{{ $data->zipcode }}"
                         class="bg-x-light text-x-black border-x-shade focus-within:outline-x-prime p-2 text-base border rounded-md focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2" />
                 </div>
+                <div class="flex flex-col gap-px lg:col-span-6">
+                    <label class="text-x-black font-x-core text-sm">{{ __('Contacts') }}</label>
+                    <div class="grid grid-rows-1 grid-cols-1 lg:grid-cols-6 gap-4 lg:gap-[5px]">
+                        <div class="bg-x-light border-x-shade border rounded-md w-full overflow-auto lg:col-span-6">
+                            <table class="w-max min-w-full">
+                                <thead>
+                                    <tr>
+                                        <td class="text-x-black text-sm font-x-core p-2">
+                                            {{ __('First Name') }}
+                                        </td>
+                                        <td class="text-x-black text-sm font-x-core p-2">
+                                            {{ __('Last Name') }}
+                                        </td>
+                                        <td class="text-x-black text-sm font-x-core p-2">{{ __('Phone') }}</td>
+                                        <td class="text-x-black text-sm font-x-core p-2">{{ __('Email') }}</td>
+                                        <td class="text-x-black text-sm font-x-core p-2 w-[80px]"></td>
+                                    </tr>
+                                </thead>
+                                <tbody id="contact_display">
+                                    @foreach ($data->contacts() as $item)
+                                        <tr class="border-[#d1d1d1] border-t">
+                                            <td class="p-2 text-[#1d1d1d] text-base">
+                                                {{ $item->first_name }}
+                                            </td>
+                                            <td class="p-2 text-[#1d1d1d] text-base">
+                                                {{ $item->last_name }}
+                                            </td>
+                                            <td class="p-2 text-[#1d1d1d] text-base">
+                                                {{ $item->phone }}
+                                            </td>
+                                            <td class="p-2 text-[#1d1d1d] text-base">
+                                                {{ $item->email ?? '__' }}
+                                            </td>
+                                            <td class="p-2">
+                                                <button type="button" onclick="removeContactRow(event)"
+                                                    data-index="{{ $item->id }}"
+                                                    class="mx-auto p-2 flex items-center justify-center rounded-md text-[#fcfcfc] hover:text-[#1d1d1d] focus-within:text-[#1d1d1d] bg-red-400 hover:bg-red-300 focus-within:bg-red-300 outline-none">
+                                                    <svg class="block w-4 h-4 pointer-events-none" fill="currentcolor"
+                                                        viewBox="0 -960 960 960">
+                                                        <path
+                                                            d="M253-99q-36.462 0-64.231-26.775Q161-152.55 161-190v-552h-11q-18.75 0-31.375-12.86Q106-767.719 106-787.36 106-807 118.613-820q12.612-13 31.387-13h182q0-20 13.125-33.5T378-880h204q19.625 0 33.312 13.75Q629-852.5 629-833h179.921q20.279 0 33.179 13.375 12.9 13.376 12.9 32.116 0 20.141-12.9 32.825Q829.2-742 809-742h-11v552q0 37.45-27.069 64.225Q743.863-99 706-99H253Zm104-205q0 14.1 11.051 25.05 11.051 10.95 25.3 10.95t25.949-10.95Q431-289.9 431-304v-324q0-14.525-11.843-26.262Q407.313-666 392.632-666q-14.257 0-24.944 11.738Q357-642.525 357-628v324Zm173 0q0 14.1 11.551 25.05 11.551 10.95 25.8 10.95t25.949-10.95Q605-289.9 605-304v-324q0-14.525-11.545-26.262Q581.91-666 566.93-666q-14.555 0-25.742 11.738Q530-642.525 530-628v324Z" />
+                                                    </svg>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="flex flex-col gap-4 lg:gap-[5px] lg:flex-row lg:flex-wrap lg:col-span-6">
+                            <div class="lg:flex-1">
+                                <input id="contact_first" placeholder="{{ __('First Name') }}"
+                                    class="bg-x-light w-full text-x-black border-x-shade focus-within:outline-x-prime p-2 text-base border rounded-md focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2" />
+                            </div>
+                            <div class="lg:flex-1">
+                                <input id="contact_last" placeholder="{{ __('Last Name') }}"
+                                    class="bg-x-light w-full text-x-black border-x-shade focus-within:outline-x-prime p-2 text-base border rounded-md focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2" />
+                            </div>
+                            <div class="lg:flex-1">
+                                <input id="contact_phone" type="tel" placeholder="{{ __('Phone') }}"
+                                    class="bg-x-light w-full text-x-black border-x-shade focus-within:outline-x-prime p-2 text-base border rounded-md focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2" />
+                            </div>
+                            <div class="lg:flex-1">
+                                <input id="contact_email" type="email" placeholder="{{ __('Email') }}"
+                                    class="bg-x-light w-full text-x-black border-x-shade focus-within:outline-x-prime p-2 text-base border rounded-md focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2" />
+                            </div>
+                            <button type="button" onclick="addContactRow()"
+                                class="lg:w-[80px] flex gap-2 items-center justify-center font-x-core text-sm rounded-md bg-blue-400 text-x-white relative p-2 lg:px-4 h-[42px] aspect-square lg:aspect-auto outline-none hover:!text-x-black hover:bg-blue-300 focus-within:!text-x-black focus-within:bg-blue-300">
+                                <svg class="block w-5 h-5 pointer-events-none" fill="currentcolor"
+                                    viewBox="0 -960 960 960">
+                                    <path
+                                        d="M479.825-185q-18.45 0-31.637-12.625Q435-210.25 435-231v-203H230q-18.375 0-31.688-13.56Q185-461.119 185-479.86q0-20.14 13.312-32.64Q211.625-525 230-525h205v-205q0-19.775 13.358-32.388Q461.716-775 480.158-775t32.142 12.612Q526-749.775 526-730v205h204q18.8 0 32.4 12.675 13.6 12.676 13.6 32.316 0 19.641-13.6 32.825Q748.8-434 730-434H526v203q0 20.75-13.65 33.375Q498.699-185 479.825-185Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-px lg:col-span-6">
+                    <label class="text-x-black font-x-core text-sm">{{ __('Records') }}</label>
+                    <div class="grid grid-rows-1 grid-cols-1 lg:grid-cols-6 gap-4 lg:gap-[5px]">
+                        <div class="bg-x-light border-x-shade border rounded-md w-full overflow-auto lg:col-span-6">
+                            <table class="w-max min-w-full">
+                                <thead>
+                                    <tr>
+                                        <td class="text-x-black text-sm font-x-core p-2">
+                                            {{ __('Type') }}
+                                        </td>
+                                        <td class="text-x-black text-sm font-x-core p-2">
+                                            {{ __('Content') }}
+                                        </td>
+                                        <td class="text-x-black text-sm font-x-core p-2 w-[80px]"></td>
+                                    </tr>
+                                </thead>
+                                <tbody id="record_display">
+                                    @foreach ($data->records() as $item)
+                                        <tr class="border-[#d1d1d1] border-t">
+                                            <td class="p-2 text-[#1d1d1d] text-base">
+                                                {{ $item->type }}
+                                            </td>
+                                            <td class="p-2 text-[#1d1d1d] text-base">
+                                                {{ $item->content }}
+                                            </td>
+                                            <td class="p-2">
+                                                <button type="button" onclick="removeRecordRow(event)"
+                                                    data-index="{{ $item->id }}"
+                                                    class="mx-auto p-2 flex items-center justify-center rounded-md text-[#fcfcfc] hover:text-[#1d1d1d] focus-within:text-[#1d1d1d] bg-red-400 hover:bg-red-300 focus-within:bg-red-300 outline-none">
+                                                    <svg class="block w-4 h-4 pointer-events-none" fill="currentcolor"
+                                                        viewBox="0 -960 960 960">
+                                                        <path
+                                                            d="M253-99q-36.462 0-64.231-26.775Q161-152.55 161-190v-552h-11q-18.75 0-31.375-12.86Q106-767.719 106-787.36 106-807 118.613-820q12.612-13 31.387-13h182q0-20 13.125-33.5T378-880h204q19.625 0 33.312 13.75Q629-852.5 629-833h179.921q20.279 0 33.179 13.375 12.9 13.376 12.9 32.116 0 20.141-12.9 32.825Q829.2-742 809-742h-11v552q0 37.45-27.069 64.225Q743.863-99 706-99H253Zm104-205q0 14.1 11.051 25.05 11.051 10.95 25.3 10.95t25.949-10.95Q431-289.9 431-304v-324q0-14.525-11.843-26.262Q407.313-666 392.632-666q-14.257 0-24.944 11.738Q357-642.525 357-628v324Zm173 0q0 14.1 11.551 25.05 11.551 10.95 25.8 10.95t25.949-10.95Q605-289.9 605-304v-324q0-14.525-11.545-26.262Q581.91-666 566.93-666q-14.555 0-25.742 11.738Q530-642.525 530-628v324Z" />
+                                                    </svg>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="flex flex-col gap-4 lg:gap-[5px] lg:flex-row lg:flex-wrap lg:col-span-6">
+                            <div class="lg:flex-1">
+                                <select x-select search id="record_type" placeholder="{{ __('Type') }}">
+                                    @foreach (Core::record() as $type)
+                                        <option value="{{ $type }}">
+                                            {{ ucwords(__($type)) }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="lg:flex-[2]">
+                                <input id="record_content" type="tel" placeholder="{{ __('Content') }}"
+                                    class="bg-x-light w-full text-x-black border-x-shade focus-within:outline-x-prime p-2 text-base border rounded-md focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2" />
+                            </div>
+                            <button type="button" onclick="addRecordRow()"
+                                class="lg:w-[80px] flex gap-2 items-center justify-center font-x-core text-sm rounded-md bg-blue-400 text-x-white relative p-2 lg:px-4 h-[42px] aspect-square lg:aspect-auto outline-none hover:!text-x-black hover:bg-blue-300 focus-within:!text-x-black focus-within:bg-blue-300">
+                                <svg class="block w-5 h-5 pointer-events-none" fill="currentcolor"
+                                    viewBox="0 -960 960 960">
+                                    <path
+                                        d="M479.825-185q-18.45 0-31.637-12.625Q435-210.25 435-231v-203H230q-18.375 0-31.688-13.56Q185-461.119 185-479.86q0-20.14 13.312-32.64Q211.625-525 230-525h205v-205q0-19.775 13.358-32.388Q461.716-775 480.158-775t32.142 12.612Q526-749.775 526-730v205h204q18.8 0 32.4 12.675 13.6 12.676 13.6 32.316 0 19.641-13.6 32.825Q748.8-434 730-434H526v203q0 20.75-13.65 33.375Q498.699-185 479.825-185Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
@@ -135,6 +278,20 @@
             form = document.querySelector("#form");
         save.addEventListener("click", e => {
             form.submit();
+        });
+
+        const [addContactRow, removeContactRow] = contactItemRow({
+            display: "#contact_display",
+            first: "#contact_first",
+            last: "#contact_last",
+            phone: "#contact_phone",
+            email: "#contact_email",
+        });
+
+        const [addRecordRow, removeRecordRow] = recordItemRow({
+            display: "#record_display",
+            type: "#record_type",
+            content: "#record_content",
         });
     </script>
 @endsection

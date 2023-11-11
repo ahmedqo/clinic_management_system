@@ -67,6 +67,12 @@
                 selector: "#settings",
                 class: "opacity-0",
             }, {
+                selector: "#draw",
+                class: "opacity-0",
+            }, {
+                selector: "#color",
+                class: "opacity-0",
+            }, {
                 selector: "#languages",
                 class: "opacity-0",
             }, {
@@ -86,6 +92,34 @@
                 }
                 document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`);
             });
+        });
+
+        const settings = document.querySelector("#settings");
+        const languages = document.querySelector("#languages");
+
+        [settings, languages].forEach(el => {
+            el.addEventListener("click", (e) => {
+                if (e.target === el && !el.classList.contains("pointer-events-none")) {
+                    el.previousElementSibling.click();
+                }
+            });
+        });
+
+        [settings.children[0], languages.children[0]].forEach(el => {
+            el.addEventListener("click", (e) => {
+                e.stopPropagation();
+            });
+        });
+
+        window.addEventListener("click", (e) => {
+            if (!settings.parentElement.contains(e.target) && !settings.classList.contains("pointer-events-none")) {
+                document.querySelector("#settings_trigger").click();
+            }
+
+            if (!languages.parentElement.contains(e.target) && !languages.classList.contains(
+                    "pointer-events-none")) {
+                document.querySelector("#languages_trigger").click();
+            }
         });
     </script>
     @yield('scripts')

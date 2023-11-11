@@ -70,7 +70,10 @@ class PrescriptionController extends Controller
             ]);
         }
 
-        return Redirect::back()->with([
+        return Redirect::route('views.prescriptions.summary', [
+            'id' => $current->id,
+            'print' => 'true'
+        ])->with([
             'message' => __('Created successfully'),
             'type' => 'success'
         ]);
@@ -121,7 +124,10 @@ class PrescriptionController extends Controller
             }
         }
 
-        return Redirect::back()->with([
+        return Redirect::route('views.prescriptions.summary', [
+            'id' => $current->id,
+            'print' => 'true'
+        ])->with([
             'message' => __('Updated successfully'),
             'type' => 'success'
         ]);

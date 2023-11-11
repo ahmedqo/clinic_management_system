@@ -11,4 +11,4 @@ Route::get('/users/{id}/update', [UserController::class, 'update_view'])->name('
 Route::post('/users/create', [UserController::class, 'create_action'])->name('actions.users.create');
 Route::post('/users/{id}/update', [UserController::class, 'update_action'])->name('actions.users.update');
 Route::patch('/users/{id}/status', [UserController::class, 'status_action'])->name('actions.users.status');
-Route::get('/users/{id}/delete', [UserController::class, 'delete_action'])->name('actions.users.delete');
+Route::delete('/users/{id}/delete', [UserController::class, 'delete_action'])->name('actions.users.delete');

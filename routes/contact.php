@@ -10,4 +10,4 @@ Route::get('/contacts/{id}/update', [ContactController::class, 'update_view'])->
 
 Route::post('/contacts/create', [ContactController::class, 'create_action'])->name('actions.contacts.create');
 Route::post('/contacts/{id}/update', [ContactController::class, 'update_action'])->name('actions.contacts.update');
-Route::get('/contacts/{id}/delete', [ContactController::class, 'delete_action'])->name('actions.contacts.delete');
+Route::delete('/contacts/{id}/delete', [ContactController::class, 'delete_action'])->name('actions.contacts.delete');

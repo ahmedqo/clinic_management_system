@@ -59,9 +59,9 @@
                             </td>
                             <td>{{ $row->date }}</td>
                             <td>{{ $row->time }}</td>
-                            <td class="hidden">{{ $row->note ?? '___' }}</td>
+                            <td class="hidden">{{ $row->note ?? '__' }}</td>
                             <td>{{ ucwords(__($row->status)) }}</td>
-                            <td>{{ $row->created_at->diffForHumans() }}</td>
+                            <td>{{ $row->created_at }}</td>
                             <td>
                                 @include('shared.admin.action', [
                                     'update' => route('views.appointments.update', $row->id),

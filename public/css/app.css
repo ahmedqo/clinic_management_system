@@ -28,9 +28,8 @@
     --color-5: #EF4444;
     --color-6: #14B8A6;
     --color-7: #EC4899;
-    --color-8: #F97316;
-    --color-9: #F43F5E;
-    --color-10: #3F51B5;
+    --color-8: #F43F5E;
+    --color-9: #1F2937;
 }
 
 *,
@@ -214,4 +213,9 @@ table:not([default])+.x-datatable-container .x-datatable-filter-field-container 
     #wrapper .fc-toolbar-chunk {
         width: max-content;
     }
+}
+
+#graph .drawLayer {
+    position: absolute;
+    inset: 0;
 }

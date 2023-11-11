@@ -10,4 +10,4 @@ Route::get('/events/{id}/update', [EventController::class, 'update_view'])->name
 
 Route::post('/events/create', [EventController::class, 'create_action'])->name('actions.events.create');
 Route::post('/events/{id}/update', [EventController::class, 'update_action'])->name('actions.events.update');
-Route::get('/events/{id}/delete', [EventController::class, 'delete_action'])->name('actions.events.delete');
+Route::delete('/events/{id}/delete', [EventController::class, 'delete_action'])->name('actions.events.delete');

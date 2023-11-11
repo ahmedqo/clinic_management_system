@@ -42,7 +42,7 @@
                 <div class="flex flex-col gap-px">
                     <label class="text-x-black font-x-core text-sm">{{ __('Created at') }}</label>
                     <div class="w-full bg-x-light text-x-black border-x-shade p-2 text-base border rounded-md">
-                        {{ $data->created_at->diffForHumans() }}</div>
+                        {{ $data->created_at }}</div>
                 </div>
                 <div class="w-full lg:col-span-2">
                     <table default x-table search>
@@ -56,7 +56,7 @@
                             @foreach ($data->items() as $item)
                                 <tr>
                                     <td>{{ $item->content }}</td>
-                                    <td>{{ $item->note ?? '___' }}</td>
+                                    <td>{{ $item->note ?? '__' }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -129,7 +129,10 @@
             ];
         @endif
         x.DataTable().Print("#page", {
-            trigger: "#print"
+            trigger: "#print",
+            @if (request()->print)
+                exec: true,
+            @endif
         });
     </script>
 @endsection

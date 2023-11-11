@@ -58,9 +58,10 @@
                             </td>
                             <td>{{ $row->mime }}</td>
                             <td>{{ Core::convert($row->size) }}</td>
-                            <td>{{ $row->created_at->diffForHumans() }}</td>
+                            <td>{{ $row->created_at }}</td>
                             <td>
                                 @include('shared.admin.action', [
+                                    'view' => route('views.documents.summary', $row->id),
                                     'delete' => route('actions.documents.delete', $row->id),
                                 ])
                             </td>

@@ -96,7 +96,7 @@
                 const top = document.querySelector("#items").innerHTML.trim();
                 DATA.items.add(file);
                 document.querySelector("#items").insertAdjacentHTML('afterbegin', `
-                    <div class="data-doc flex flex-wrap gap-2 items-center justify-between p-2 border-x-shade border-t">
+                    <div class="data-doc flex flex-wrap gap-2 items-center justify-between p-2 border-x-shade border-t first:border-none">
                         <div class="block flex-1 text-base truncate text-ellipsis overflow-hidden">
                             ${file.name}
                         </div>

@@ -57,7 +57,7 @@ class AuthController extends Controller
     public function blank_action(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'email' => ['required', 'string', 'email'],
+            'email' => ['required', 'email'],
         ]);
 
         if ($validator->fails()) {
