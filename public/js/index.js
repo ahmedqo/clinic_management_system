@@ -353,12 +353,13 @@ function Board(target) {
         );
 
         this.$Restore.Draw.Undo.forEach((image) => {
+            const _factor = Math.min(this.$Viewer.$Canvas.width / image.width, this.$Viewer.$Canvas.height / image.height);
             this.$Viewer.$Context.drawImage(
                 image,
-                this.$Viewer.$Canvas.width / 2 - (image.width * factor) / 2,
-                this.$Viewer.$Canvas.height / 2 - (image.height * factor) / 2,
-                image.width * factor,
-                image.height * factor
+                this.$Viewer.$Canvas.width / 2 - (image.width * _factor) / 2,
+                this.$Viewer.$Canvas.height / 2 - (image.height * _factor) / 2,
+                image.width * _factor,
+                image.height * _factor
             );
         });
     };
@@ -622,7 +623,7 @@ function Board(target) {
         this.$Poster.$Resize();
         this.$Viewer.$Resize();
         this.$Drawer.$Resize();
-        this.$Apply();
+        this.$Apply(true);
 
         if (this.$Current.Tool === "Magnifier") {
             this.$ExecTool();
@@ -680,7 +681,7 @@ Board.V = function(parent, type, $Field) {
     this.$Context.lineJoin = "round";
     this.$Context.lineCap = "round";
 
-    this.$Context.font = 16 * this.$Theme.stroke + "px sans-sarif";
+    this.$Context.font = this.$Theme.stroke + "rem sans-sarif";
 
     this.$Stage = (boolean) => {
         this.$Canvas.style.pointerEvents = boolean ? "all" : "none";
@@ -726,6 +727,14 @@ Board.V = function(parent, type, $Field) {
         this.$Canvas.width = this.$Parent.clientWidth;
 
         this.$Context = this.$Canvas.getContext("2d");
+
+        this.$Context.strokeStyle = this.$Theme.color;
+        this.$Context.lineWidth = this.$Theme.stroke;
+        this.$Context.textAlign = "center";
+        this.$Context.lineJoin = "round";
+        this.$Context.lineCap = "round";
+
+        this.$Context.font = this.$Theme.stroke + "rem sans-sarif";
     };
 };
 
@@ -811,7 +820,9 @@ Board.D = function($View, $Context, $Restore, $Field) {
     this.Length = (P1, P2, x, y) => {
         const size = ((Math.hypot(P2.x - P1.x, P2.y - P1.y) / (window.devicePixelRatio * 96)) * 25.4).toFixed(2);
 
+        $View.$Context.font = "20px sans-sarif";
         $View.$Context.fillText(size + "mm", x, y);
+        $View.$Context.font = $View.$Theme.stroke + "rem sans-sarif";
     };
 
     this.$Save = () => {
@@ -922,7 +933,7 @@ Board.D = function($View, $Context, $Restore, $Field) {
             $View.$Context.closePath();
             $View.$Context.stroke();
 
-            this.Length(old_mouse, new_mouse, old_mouse.x + $View.$Theme.stroke * 6, old_mouse.y + $View.$Theme.stroke * 5);
+            this.Length(old_mouse, new_mouse, old_mouse.x, old_mouse.y + 8);
         };
     };
 
@@ -1020,7 +1031,7 @@ Board.D = function($View, $Context, $Restore, $Field) {
             $View.$Context.closePath();
             $View.$Context.stroke();
 
-            this.Length(old_mouse, new_mouse, old_mouse.x + width / 2, old_mouse.y + height / 2 + $View.$Theme.stroke * 5);
+            this.Length(old_mouse, new_mouse, old_mouse.x + width / 2, old_mouse.y + height / 2 + 8);
         };
     };
 
@@ -1050,7 +1061,7 @@ Board.D = function($View, $Context, $Restore, $Field) {
             $View.$Context.closePath();
             $View.$Context.stroke();
 
-            this.Length(old_mouse, new_mouse, old_mouse.x, old_mouse.y + $View.$Theme.stroke * 5);
+            this.Length(old_mouse, new_mouse, old_mouse.x, old_mouse.y + 8);
         };
     };
 
