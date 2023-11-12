@@ -86,7 +86,7 @@ class AppointmentController extends Controller
         ]);
 
         $end = Core::status()[2];
-        if ($request->status == $end &&  $status != $end) {
+        if ($request->status == $end && $status != $end) {
             return Redirect::route('views.invoices.create', [
                 'patient' => $request->patient
             ]);

@@ -219,3 +219,7 @@ table:not([default])+.x-datatable-container .x-datatable-filter-field-container 
     position: absolute;
     inset: 0;
 }
+
+input::-webkit-inner-spin-button {
+    display: none;
+}

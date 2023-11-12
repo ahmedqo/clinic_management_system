@@ -59,20 +59,12 @@
         </div>
     </div>
     <dialog id="modal" style="height: var(--vh)"
-        class="bg-x-black-blur hidden fixed inset-0 w-full h-screen z-[50]  backdrop-blur-sm p-2 lg:p-4 overflow-auto">
+        class="bg-x-black-blur pointer-events-none hidden fixed inset-0 w-full h-screen z-[50]  backdrop-blur-sm p-2 lg:p-4 overflow-auto">
         <section class="w-full lg:p-4 lg:w-1/2 mx-auto mt-auto lg:my-auto">
             <div class="flex flex-col gap-4 bg-x-white rounded-md shadow-x-core lg:rounded-x-core p-4">
                 <div class="w-full flex items-center justify-between gap-2">
                     <h1 class="font-x-core text-2xl">{{ __('Create Appointment') }}</h1>
                     <div class="w-max flex gap-[2px] ms-auto rounded-md overflow-hidden">
-                        <button id="close"
-                            class="flex gap-2 items-center justify-center font-x-core text-sm rounded-sm bg-red-400 text-x-white relative p-2 lg:px-4 h-[42px] aspect-square lg:aspect-auto outline-none hover:!text-x-black hover:bg-red-300 focus-within:!text-x-black focus-within:bg-red-300">
-                            <svg class="block w-5 h-5 pointer-events-none" fill="currentcolor" viewBox="0 0 48 48">
-                                <path
-                                    d="M12.45 37.65 10.35 35.55 21.9 24 10.35 12.45 12.45 10.35 24 21.9 35.55 10.35 37.65 12.45 26.1 24 37.65 35.55 35.55 37.65 24 26.1Z" />
-                            </svg>
-                            <span class="hidden lg:block">{{ __('Cancel') }}</span>
-                        </button>
                         <button id="save"
                             class="flex gap-2 items-center justify-center font-x-core text-sm rounded-sm bg-purple-400 text-x-white relative p-2 lg:px-4 h-[42px] aspect-square lg:aspect-auto outline-none hover:!text-x-black hover:bg-purple-300 focus-within:!text-x-black focus-within:bg-purple-300">
                             <svg class="block w-5 h-5 pointer-events-none" fill="currentcolor" viewBox="0 -960 960 960">
@@ -149,7 +141,6 @@
 
         const
             modal = document.querySelector("#modal"),
-            close = document.querySelector("#close"),
             patient = document.querySelector("#patient"),
             date = document.querySelector("#date"),
             time = document.querySelector("#time"),
@@ -166,15 +157,31 @@
             else toggleFields(".hidden-fields", false);
         });
 
-        close.addEventListener("click", e => {
-            document.body.classList.remove("no-body");
-            modal.classList.add("hidden");
-            modal.classList.remove("flex");
+        function run() {
             toggleFields(".hidden-fields", false);
-            patient.clear();
-            time.clear();
+            modal.classList.add("pointer-events-none", "hidden");
+            modal.classList.remove("flex");
             date.value = "";
             note.value = "";
+            patient.clear();
+            time.clear();
+            exec(modal);
+        }
+
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal && !modal.classList.contains("hidden")) {
+                run()
+            }
+        });
+
+        modal.children[0].children[0].addEventListener("click", (e) => {
+            e.stopPropagation();
+        });
+
+        window.addEventListener("click", (e) => {
+            if (!modal.children[0].contains(e.target) && !modal.classList.contains("hidden")) {
+                run();
+            }
         });
 
         var calendar = new FullCalendar.Calendar(document.querySelector("#calendar"), {
@@ -197,9 +204,9 @@
                         else e.removeAttribute("selected");
                     });
                 }
-                document.body.classList.add("no-body");
-                modal.classList.remove("hidden");
+                modal.classList.remove("pointer-events-none", "hidden");
                 modal.classList.add("flex");
+                exec(modal, true);
             },
             eventDidMount: function(event) {
                 const dot = event.el.querySelector(".fc-daygrid-event-dot");

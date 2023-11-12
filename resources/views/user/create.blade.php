@@ -87,7 +87,7 @@
                 </div>
                 <div class="flex flex-col gap-px lg:col-span-2">
                     <label for="zipcode" class="text-x-black font-x-core text-sm">{{ __('Zipcode') }}</label>
-                    <input id="zipcode" type="text" name="zipcode" placeholder="{{ __('Zipcode') }}"
+                    <input id="zipcode" type="number" name="zipcode" placeholder="{{ __('Zipcode') }}"
                         class="bg-x-light text-x-black border-x-shade focus-within:outline-x-prime p-2 text-base border rounded-md focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2" />
                 </div>
             </form>

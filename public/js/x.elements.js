@@ -332,7 +332,7 @@ const x = (function() {
     })();
 
     const Print = (function() {
-        function $tempkate(opts) {
+        function $template(opts) {
             const { lang, dir, size, margin, css, page } = opts;
             return `<!DOCTYPE html><html lang="${lang}"dir="${dir}"><head><meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible"content="IE=edge"/><meta name="viewport"content="width=device-width, initial-scale=1.0"/><style>@page{size:${size.page};margin:${margin}}#page{width:100%}#head{height:${size.head}}#foot{height:${size.foot}}</style>${css}</head><body><table id="page"><thead><tr><td><header id="head"></header></td></tr></thead><tbody><tr><td><main id="main">${page}</main></td></tr></tbody><tfoot><tr><td><footer id=foot></footer></td></tr></tfoot></table></body></html>`;
         }
@@ -347,7 +347,7 @@ const x = (function() {
                 var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
                 iframeDoc.open();
                 iframeDoc.write(
-                    $tempkate({
+                    $template({
                         ...Print.opts,
                         page: page.innerHTML,
                         css: Print.opts.css.join(""),

@@ -151,15 +151,18 @@
     <script>
         x.Print.opts.size.page = "A5";
         @if (env('PRINT_IMAGE'))
-            x.Print.opts.size.head = "34mm";
-            x.Print.opts.size.foot = "38mm";
+            x.Print.opts.size.head = "18vh";
+            x.Print.opts.size.foot = "20vh";
             x.Print.opts.margin = "0 0 0 0";
             x.Print.opts.css = [...x.Print.opts.css,
                 `<style>#main{margin:5mm 20mm 5mm 20mm}</style>`
             ];
         @endif
         x.DataTable().Print("#page", {
-            trigger: "#print"
+            trigger: "#print",
+            @if (request()->print)
+                exec: true,
+            @endif
         });;
     </script>
 @endsection

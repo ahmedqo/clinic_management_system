@@ -111,6 +111,16 @@
             });
         });
 
+        function exec(el, force = false) {
+            if (el.classList.contains("pointer-events-none")) {
+                document.body.classList.remove("!overflow-hidden", "!h-screen");
+                !force && document.body.classList.remove("lg:!overflow-auto", "lg:!h-[unset]");
+            } else {
+                document.body.classList.add("!overflow-hidden", "!h-screen");
+                !force && document.body.classList.add("lg:!overflow-auto", "lg:!h-[unset]");
+            }
+        }
+
         window.addEventListener("click", (e) => {
             if (!settings.parentElement.contains(e.target) && !settings.classList.contains("pointer-events-none")) {
                 document.querySelector("#settings_trigger").click();
@@ -120,6 +130,13 @@
                     "pointer-events-none")) {
                 document.querySelector("#languages_trigger").click();
             }
+        });
+
+        document.querySelector("#settings_trigger").addEventListener("click", (e) => {
+            exec(settings);
+        });
+        document.querySelector("#languages_trigger").addEventListener("click", (e) => {
+            exec(languages);
         });
     </script>
     @yield('scripts')

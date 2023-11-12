@@ -19,7 +19,7 @@ class CheckAppointment
      */
     public function handle(Request $request, Closure $next)
     {
-        $appointments = Appointment::all();
+        $appointments = Appointment::where("status", Core::status()[1])->get();
 
         foreach ($appointments as $appointment) {
             $appointmentDateTime = Carbon::parse($appointment->date . ' ' . $appointment->time);

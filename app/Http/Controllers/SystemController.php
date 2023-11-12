@@ -35,8 +35,8 @@ class SystemController extends Controller
                     $registry += $item->items()->sum('cost');
                 break;
             case "week":
-                $startOfWeek = Carbon::now()->startOfWeek();
-                $endOfWeek = Carbon::now()->endOfWeek();
+                $startOfWeek = Carbon::now()->startOfWeek()->subDay();
+                $endOfWeek = Carbon::now()->endOfWeek()->subDay();
 
                 $patientCount = Patient::whereBetween('created_at', [$startOfWeek, $endOfWeek])->get()->count();
                 $appointmentCount = Appointment::whereBetween('date', [$startOfWeek, $endOfWeek])->get()->count();
@@ -71,6 +71,7 @@ class SystemController extends Controller
         $appointments =  Appointment::orderBy('id', 'DESC')->get()->map(function ($item) {
             return [
                 'start' => $item->date . 'T' .  $item->time,
+                'end' => $item->date . 'T' . Carbon::parse($item->time)->addMinutes(Core::system()->slot)->format('H:i:s'),
                 'title' => strtoupper($item->patient()->last_name) . ' ' . ucfirst($item->patient()->first_name),
                 'color' => $item->status == 'canceled' ? '#fca5a5' : ($item->status == 'pending' ? '#fcd34d' : '#6ee7b7'),
                 'groupId' => 'appointment',

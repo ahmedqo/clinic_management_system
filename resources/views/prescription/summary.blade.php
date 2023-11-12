@@ -2,7 +2,7 @@
 @section('title', __('Prescription Summary') . ' #' . $data->id)
 
 @section('content')
-    <div class="flex flex-col gap-4">
+    <div id="test" class="flex flex-col gap-4">
         <div class="w-full flex items-center justify-between gap-2">
             <h1 class="font-x-core text-2xl">{{ __('Prescription Summary') }} #{{ $data->id }}</h1>
             <div
@@ -121,8 +121,8 @@
     <script>
         x.Print.opts.size.page = "A5";
         @if (env('PRINT_IMAGE'))
-            x.Print.opts.size.head = "34mm";
-            x.Print.opts.size.foot = "38mm";
+            x.Print.opts.size.head = "18vh";
+            x.Print.opts.size.foot = "20vh";
             x.Print.opts.margin = "0 0 0 0";
             x.Print.opts.css = [...x.Print.opts.css,
                 `<style>#main{margin:5mm 20mm 5mm 20mm}</style>`
