@@ -35,8 +35,8 @@ class SystemController extends Controller
                     $registry += $item->items()->sum('cost');
                 break;
             case "week":
-                $startOfWeek = Carbon::now()->startOfWeek()->subDay();
-                $endOfWeek = Carbon::now()->endOfWeek()->subDay();
+                $startOfWeek = Carbon::now()->startOfWeek(Carbon::SUNDAY);
+                $endOfWeek = Carbon::now()->endOfWeek(Carbon::SATURDAY);
 
                 $patientCount = Patient::whereBetween('created_at', [$startOfWeek, $endOfWeek])->get()->count();
                 $appointmentCount = Appointment::whereBetween('date', [$startOfWeek, $endOfWeek])->get()->count();
