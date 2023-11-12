@@ -75,7 +75,7 @@
             </ul>
         </nav>
 
-        <div class="w-full lg:flex-1">
+        <div class="w-full lg:flex-1 lg:w-0">
             <div id="general" class="tab flex flex-col gap-4">
                 <div class="w-full flex items-center justify-between gap-2">
                     <h1 class="font-x-core text-2xl">{{ __('General Info') }}</h1>
@@ -208,69 +208,85 @@
                         </div>
                         <div class="flex flex-col gap-px lg:col-span-6">
                             <label class="text-x-black font-x-core text-sm">{{ __('Contacts') }}</label>
-                            <div class="bg-x-light border-x-shade border rounded-md w-full overflow-auto lg:col-span-6">
-                                <table class="w-max min-w-full">
-                                    <thead>
-                                        <tr>
-                                            <td class="text-x-black text-sm font-x-core p-2">
-                                                {{ __('First Name') }}
-                                            </td>
-                                            <td class="text-x-black text-sm font-x-core p-2">
-                                                {{ __('Last Name') }}
-                                            </td>
-                                            <td class="text-x-black text-sm font-x-core p-2">{{ __('Phone') }}</td>
-                                            <td class="text-x-black text-sm font-x-core p-2">{{ __('Email') }}</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($data->contacts() as $item)
-                                            <tr class="border-[#d1d1d1] border-t">
-                                                <td class="p-2 text-[#1d1d1d] text-base">
-                                                    {{ $item->first_name }}
+                            @if ($data->contacts()->count())
+                                <div
+                                    class="bg-x-light border-x-shade border rounded-md w-full overflow-auto lg:col-span-6">
+                                    <table class="w-max min-w-full">
+                                        <thead>
+                                            <tr>
+                                                <td class="text-x-black text-sm font-x-core p-2">
+                                                    {{ __('First Name') }}
                                                 </td>
-                                                <td class="p-2 text-[#1d1d1d] text-base">
-                                                    {{ $item->last_name }}
+                                                <td class="text-x-black text-sm font-x-core p-2">
+                                                    {{ __('Last Name') }}
                                                 </td>
-                                                <td class="p-2 text-[#1d1d1d] text-base">
-                                                    {{ $item->phone }}
-                                                </td>
-                                                <td class="p-2 text-[#1d1d1d] text-base">
-                                                    {{ $item->email ?? '__' }}
-                                                </td>
+                                                <td class="text-x-black text-sm font-x-core p-2">{{ __('Phone') }}</td>
+                                                <td class="text-x-black text-sm font-x-core p-2">{{ __('Email') }}</td>
                                             </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($data->contacts() as $item)
+                                                <tr class="border-[#d1d1d1] border-t">
+                                                    <td class="p-2 text-[#1d1d1d] text-base">
+                                                        {{ $item->first_name }}
+                                                    </td>
+                                                    <td class="p-2 text-[#1d1d1d] text-base">
+                                                        {{ $item->last_name }}
+                                                    </td>
+                                                    <td class="p-2 text-[#1d1d1d] text-base">
+                                                        {{ $item->phone }}
+                                                    </td>
+                                                    <td class="p-2 text-[#1d1d1d] text-base">
+                                                        {{ $item->email ?? '__' }}
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            @else
+                                <div
+                                    class="min-h-[42px] text-x-black text-base w-full p-2 rounded-md bg-x-light border border-x-shade">
+                                    __
+                                </div>
+                            @endif
                         </div>
                         <div class="flex flex-col gap-px lg:col-span-6">
                             <label class="text-x-black font-x-core text-sm">{{ __('Records') }}</label>
-                            <div class="bg-x-light border-x-shade border rounded-md w-full overflow-auto lg:col-span-6">
-                                <table class="w-max min-w-full">
-                                    <thead>
-                                        <tr>
-                                            <td class="text-x-black text-sm font-x-core p-2">
-                                                {{ __('Type') }}
-                                            </td>
-                                            <td class="text-x-black text-sm font-x-core p-2">
-                                                {{ __('Content') }}
-                                            </td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($data->records() as $item)
-                                            <tr class="border-[#d1d1d1] border-t">
-                                                <td class="p-2 text-[#1d1d1d] text-base">
-                                                    {{ $item->type }}
+                            @if ($data->records()->count())
+                                <div
+                                    class="bg-x-light border-x-shade border rounded-md w-full overflow-auto lg:col-span-6">
+                                    <table class="w-max min-w-full">
+                                        <thead>
+                                            <tr>
+                                                <td class="text-x-black text-sm font-x-core p-2">
+                                                    {{ __('Type') }}
                                                 </td>
-                                                <td class="p-2 text-[#1d1d1d] text-base">
-                                                    {{ $item->content }}
+                                                <td class="text-x-black text-sm font-x-core p-2">
+                                                    {{ __('Content') }}
                                                 </td>
                                             </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($data->records() as $item)
+                                                <tr class="border-[#d1d1d1] border-t">
+                                                    <td class="p-2 text-[#1d1d1d] text-base">
+                                                        {{ $item->type }}
+                                                    </td>
+                                                    <td class="p-2 text-[#1d1d1d] text-base">
+                                                        {{ $item->content }}
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            @else
+                                <div
+                                    class="min-h-[42px] text-x-black text-base w-full p-2 rounded-md bg-x-light border border-x-shade">
+                                    __
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -310,7 +326,6 @@
                     <table x-table search filter remove="7" download="patient_{{ $data->id }}_appointments_list">
                         <thead>
                             <tr>
-                                <td>#</td>
                                 <td>{{ __('Date') }}</td>
                                 <td>{{ __('Time') }}</td>
                                 <td class="hidden">{{ __('Note') }}</td>
@@ -324,11 +339,6 @@
                         <tbody>
                             @foreach ($data->appointments() as $row)
                                 <tr>
-                                    <td>
-                                        <span class="font-x-core text-sm">
-                                            {{ $row->id }}
-                                        </span>
-                                    </td>
                                     <td>{{ $row->date }}</td>
                                     <td>{{ $row->time }}</td>
                                     <td class="hidden">{{ $row->note ?? '__' }}</td>
@@ -384,7 +394,6 @@
                     <table x-table search filter remove="4" download="patient_{{ $data->id }}_entries_list">
                         <thead>
                             <tr>
-                                <td>#</td>
                                 <td>{{ __('Type') }}</td>
                                 <td class="hidden">{{ __('Content') }}</td>
                                 <td>{{ __('Created at') }}</td>
@@ -396,11 +405,6 @@
                         <tbody>
                             @foreach ($data->entries() as $row)
                                 <tr>
-                                    <td>
-                                        <span class="font-x-core text-sm">
-                                            {{ $row->id }}
-                                        </span>
-                                    </td>
                                     <td>{{ ucwords(__($row->type)) }}</td>
                                     <td class="hidden">{{ $row->content }}</td>
                                     <td>{{ $row->created_at }}</td>
@@ -455,7 +459,6 @@
                         download="patient_{{ $data->id }}_prescriptions_list">
                         <thead>
                             <tr>
-                                <td>#</td>
                                 <td>{{ __('Content') }}</td>
                                 <td class="hidden">{{ __('Note') }}</td>
                                 <td>{{ __('Created at') }}</td>
@@ -467,11 +470,6 @@
                         <tbody>
                             @foreach ($data->prescriptions() as $row)
                                 <tr>
-                                    <td>
-                                        <span class="font-x-core text-sm">
-                                            {{ $row->id }}
-                                        </span>
-                                    </td>
                                     <td>{{ $row->items()->count() }} {{ __('Items') }}</td>
                                     <td class="hidden">{{ $row->note ?? '__' }}</td>
                                     <td>{{ $row->created_at }}</td>
@@ -526,7 +524,6 @@
                     <table x-table search filter remove="6" download="patient_{{ $data->id }}_documents_list">
                         <thead>
                             <tr>
-                                <td>#</td>
                                 <td>{{ __('Type') }}</td>
                                 <td>{{ __('Name') }}</td>
                                 <td>{{ __('Mime') }}</td>
@@ -540,11 +537,6 @@
                         <tbody>
                             @foreach ($data->documents() as $row)
                                 <tr>
-                                    <td>
-                                        <span class="font-x-core text-sm">
-                                            {{ $row->id }}
-                                        </span>
-                                    </td>
                                     <td>{{ ucwords(__($row->type)) }}</td>
                                     <td>
                                         <a href="{{ asset('storage/documents/' . $row->name) }}" download
@@ -557,6 +549,7 @@
                                     <td>{{ $row->created_at }}</td>
                                     <td>
                                         @include('shared.admin.action', [
+                                            'view' => route('views.documents.summary', $row->id),
                                             'delete' => route('actions.documents.delete', [
                                                 'id' => $row->id,
                                                 'origin' => 'same',
@@ -604,7 +597,6 @@
                     <table x-table search filter remove="6" download="patient_{{ $data->id }}_invoices_list">
                         <thead>
                             <tr>
-                                <td>#</td>
                                 <td>{{ __('Content') }}</td>
                                 <td>{{ __('Total') }}</td>
                                 <td>{{ __('Payment') }}</td>
@@ -618,11 +610,6 @@
                         <tbody>
                             @foreach ($data->invoices() as $row)
                                 <tr>
-                                    <td>
-                                        <span class="font-x-core text-sm">
-                                            {{ $row->id }}
-                                        </span>
-                                    </td>
                                     <td>{{ $row->items()->count() }} {{ __('Items') }}</td>
                                     <td>{{ $row->items()->sum('cost') }} {{ Core::system()->currency }}</td>
                                     <td>{{ ucwords(__($data->payment)) }}</td>
@@ -650,399 +637,473 @@
     <section id="page" class="w-full hidden">
         <img src="{{ asset('img/logo.png') }}?v={{ env('APP_VERSION') }}"
             class="fixed w-full h-full block inset-0 object-contain object-center opacity-5 z-[-1]" />
-        <div class="flex flex-col">
+        <div class="flex flex-col gap-10">
             <h1 class="text-x-black font-x-core text-4xl text-center mb-4 leading-[1]">{{ __('Patient Summary') }}</h1>
 
-            <h2 class="text-x-black font-x-core text-2xl my-4 leading-[1]">{{ __('General Info') }}</h2>
-            <div class="w-full grid grid-rows-1 grid-cols-8 gap-6">
-                <div class="flex flex-col gap-1 col-span-2">
-                    <label class="text-x-black font-x-core text-sm">#</label>
-                    <div class="text-x-black text-base w-full">
-                        {{ $data->id }}
-                    </div>
-                </div>
-                <div class="flex flex-col gap-1 col-span-6">
-                    <label class="text-x-black font-x-core text-sm">{{ __('Full Name') }}</label>
-                    <div class="text-x-black text-base w-full">
-                        {{ strtoupper($data->last_name) }} {{ ucfirst($data->first_name) }}
-                    </div>
-                </div>
-                <div class="flex flex-col gap-1 col-span-2">
-                    <label class="text-x-black font-x-core text-sm">{{ __('Gender') }}</label>
-                    <div class="text-x-black text-base w-full">
-                        {{ ucwords(__($data->gender) ?? '__') }}
-                    </div>
-                </div>
-                <div class="flex flex-col gap-1 col-span-2">
-                    <label class="text-x-black font-x-core text-sm">{{ __('Birth Date') }}</label>
-                    <div class="text-x-black text-base w-full">
-                        {{ $data->birth_date ?? '__' }}
-                    </div>
-                </div>
-                <div class="flex flex-col gap-1 col-span-2">
-                    <label class="text-x-black font-x-core text-sm">{{ __('Nationality') }}</label>
-                    <div class="text-x-black text-base w-full">
-                        {{ $data->nationality ?? '__' }}
-                    </div>
-                </div>
-                <div class="flex flex-col gap-1 col-span-2">
-                    <label class="text-x-black font-x-core text-sm">{{ __('Identity') }}</label>
-                    <div class="text-x-black text-base w-full">
-                        {{ $data->identity ?? '__' }}
-                    </div>
-                </div>
-                <div class="flex flex-col gap-1 col-span-4">
-                    <label class="text-x-black font-x-core text-sm">{{ __('Insurance Provider') }}</label>
-                    <div class="text-x-black text-base w-full">
-                        {{ $data->insurance_provider ?? '__' }}
-                    </div>
-                </div>
-                <div class="flex flex-col gap-1 col-span-4">
-                    <label class="text-x-black font-x-core text-sm">{{ __('Insurance Number') }}</label>
-                    <div class="text-x-black text-base w-full">
-                        {{ $data->insurance_number ?? '__' }}
-                    </div>
-                </div>
-                <div class="flex flex-col gap-1 col-span-4">
-                    <label class="text-x-black font-x-core text-sm">{{ __('Email') }}</label>
-                    <div class="text-x-black text-base w-full">
-                        {{ $data->email ?? '__' }}
-                    </div>
-                </div>
-                <div class="flex flex-col gap-1 col-span-4">
-                    <label class="text-x-black font-x-core text-sm">{{ __('Phone') }}</label>
-                    <div class="text-x-black text-base w-full">
-                        {{ $data->phone ?? '__' }}
-                    </div>
-                </div>
-                <div class="flex flex-col gap-1 col-span-8">
-                    <label class="text-x-black font-x-core text-sm">{{ __('Address') }}</label>
-                    <div class="text-x-black text-base w-full">
-                        {{ $data->address ?? '__' }}, {{ $data->state ?? '__' }}, {{ $data->city ?? '__' }},
-                        {{ $data->zipcode ?? '__' }}
-                    </div>
+            <div class="flex flex-col gap-4">
+                <h2 class="text-x-black font-x-core text-2xl leading-[1]">{{ __('General Info') }}</h2>
+
+                <div class="w-full border-x-shade border rounded-md">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-x-shade border-t">
+                                <td class="w-1/3 text-x-black text-sm font-x-core p-2 ps-4">#</td>
+                                <td class="w-2/3 text-x-black text-sm font-x-core p-2 pe-4">
+                                    {{ __('Full Name') }}</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-x-shade border-t">
+                                <td class="w-1/3 text-x-black text-base p-2 ps-4">
+                                    {{ $data->id }}
+                                </td>
+                                <td class="w-2/3 text-x-black text-base p-2 pe-4">
+                                    {{ strtoupper($data->last_name) }} {{ ucfirst($data->first_name) }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-x-shade border-t">
+                                <td class="w-1/4 text-x-black text-sm font-x-core p-2 ps-4">
+                                    {{ __('Gender') }}</td>
+                                <td class="w-1/4 text-x-black text-sm font-x-core p-2">
+                                    {{ __('Birth Date') }}</td>
+                                <td class="w-1/4 text-x-black text-sm font-x-core p-2">
+                                    {{ __('Nationality') }}</td>
+                                <td class="w-1/4 text-x-black text-sm font-x-core p-2 pe-4">
+                                    {{ __('Identity') }}</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-x-shade border-t">
+                                <td class="w-1/4 text-x-black text-base p-2 ps-4">
+                                    {{ ucwords(__($data->gender) ?? '__') }}
+                                </td>
+                                <td class="w-1/4 text-x-black text-base p-2">
+                                    {{ $data->birth_date ?? '__' }}
+                                </td>
+                                <td class="w-1/4 text-x-black text-base p-2">
+                                    {{ ucwords(__($data->Nationality) ?? '__') }}
+                                </td>
+                                <td class="w-1/4 text-x-black text-base p-2 pe-4">
+                                    {{ $data->identity ?? '__' }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-x-shade border-t">
+                                <td class="w-1/2 text-x-black text-sm font-x-core p-2 ps-4">
+                                    {{ __('Insurance Provider') }}</td>
+                                <td class="w-1/2 text-x-black text-sm font-x-core p-2 pe-4">
+                                    {{ __('Insurance Number') }}</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-x-shade border-t">
+                                <td class="w-1/2 text-x-black text-base p-2 ps-4">
+                                    {{ ucwords(__($data->insurance_provider) ?? '__') }}
+                                </td>
+                                <td class="w-1/2 text-x-black text-base p-2 pe-4">
+                                    {{ $data->insurance_number ?? '__' }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-x-shade border-t">
+                                <td class="w-1/2 text-x-black text-sm font-x-core p-2 ps-4">
+                                    {{ __('Email') }}</td>
+                                <td class="w-1/2 text-x-black text-sm font-x-core p-2 pe-4">
+                                    {{ __('Phone') }}</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-x-shade border-t">
+                                <td class="w-1/2 text-x-black text-base p-2 ps-4">
+                                    {{ $data->email ?? '__' }}
+                                </td>
+                                <td class="w-1/2 text-x-black text-base p-2 pe-4">
+                                    {{ $data->phone ?? '__' }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-x-shade border-t">
+                                <td class="text-x-black text-sm font-x-core p-2 px-4">
+                                    {{ __('Address') }}
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-x-shade border-t">
+                                <td class="text-x-black text-base p-2 px-4">
+                                    {{ $data->address ?? '__' }}, {{ $data->state ?? '__' }},
+                                    {{ $data->city ?? '__' }},
+                                    {{ $data->zipcode ?? '__' }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
-            <h2 class="text-x-black font-x-core text-2xl my-4 leading-[1]">{{ __('Records List') }}</h2>
-            <div class="border-x-shade border w-full rounded-sm">
-                <table class="w-full">
-                    @if ($data->records()->count())
-                        <thead>
-                            <tr>
-                                <td class="text-x-black text-sm font-x-core p-2 ps-4">#</td>
-                                <td class="text-x-black text-sm font-x-core p-2">{{ __('Type') }}</td>
-                                <td class="text-x-black text-sm font-x-core p-2">{{ __('Content') }}</td>
-                                <td class="text-x-black text-sm font-x-core p-2 pe-4">{{ __('Created at') }}</td>
-                            </tr>
-                        </thead>
-                    @endif
-                    <tbody>
-                        @forelse ($data->records() as $row)
-                            <tr class="border-x-shade border-t">
-                                <td class="text-x-black text-base p-2 ps-4">
-                                    <span class="font-x-core text-sm">
-                                        {{ $row->id }}
-                                    </span>
-                                </td>
-                                <td class="text-x-black text-base p-2">{{ ucwords(__($row->type)) }}</td>
-                                <td class="text-x-black text-base p-2">{{ $row->content }}</td>
-                                <td class="text-x-black text-base p-2 pe-4">{{ $row->created_at }}</td>
-                            </tr>
-                        @empty
-                            <tr>
-                                <td class="text-x-black p-4 text-xl font-x-core uppercase text-center">
-                                    {{ __('No data found') }}
-                                </td>
-                            </tr>
-                        @endforelse
-                    </tbody>
-                </table>
-            </div>
-
-            <h2 class="text-x-black font-x-core text-2xl my-4 leading-[1]">{{ __('Entries List') }}</h2>
-            <div class="border-x-shade border w-full rounded-sm">
-                <table class="w-full">
-                    @if ($data->entries()->count())
-                        <thead>
-                            <tr>
-                                <td class="text-x-black text-sm font-x-core p-2 ps-4">#</td>
-                                <td class="text-x-black text-sm font-x-core p-2">{{ __('Type') }}</td>
-                                <td class="text-x-black text-sm font-x-core p-2 pe-4">{{ __('Created at') }}</td>
-                            </tr>
-                        </thead>
-                    @endif
-                    <tbody>
-                        @forelse ($data->entries() as $row)
-                            <tr class="border-x-shade border-t">
-                                <td class="text-x-black text-base p-2 ps-4">
-                                    <span class="font-x-core text-sm">
-                                        {{ $row->id }}
-                                    </span>
-                                </td>
-                                <td class="text-x-black text-base p-2">{{ ucwords(__($row->type)) }}</td>
-                                <td class="text-x-black text-base p-2 pe-4">{{ $row->created_at }}</td>
-                            </tr>
-                            <tr class="border-x-shade border-t">
-                                <td colspan="4" class="text-x-black text-base p-2 px-8">
-                                    <div class="text-sm font-x-core mb-1">{{ __('Content') }}</div>
-                                    <div>{{ $row->content }}</div>
-                                </td>
-                            </tr>
-                        @empty
-                            <tr>
-                                <td class="text-x-black p-4 text-xl font-x-core uppercase text-center">
-                                    {{ __('No data found') }}
-                                </td>
-                            </tr>
-                        @endforelse
-                    </tbody>
-                </table>
-            </div>
-
-            <h2 class="text-x-black font-x-core text-2xl my-4 leading-[1]">{{ __('Prescriptions List') }}</h2>
-            <div class="border-x-shade border w-full rounded-sm">
-                <table class="w-full">
-                    @if ($data->prescriptions()->count())
-                        <thead>
-                            <tr>
-                                <td class="text-x-black text-sm font-x-core p-2 ps-4">#</td>
-                                <td class="text-x-black text-sm font-x-core p-2">{{ __('Content') }}</td>
-                                <td class="text-x-black text-sm font-x-core p-2 pe-4">{{ __('Created at') }}</td>
-                            </tr>
-                        </thead>
-                    @endif
-                    <tbody>
-                        @forelse ($data->prescriptions() as $row)
-                            <tr class="border-x-shade border-t">
-                                <td class="text-x-black text-base p-2 ps-4">
-                                    <span class="font-x-core text-sm">
-                                        {{ $row->id }}
-                                    </span>
-                                </td>
-                                <td class="text-x-black text-base p-2">
-                                    {{ $row->items()->count() }} {{ __('Items') }}
-                                </td>
-                                <td class="text-x-black text-base p-2 pe-4">{{ $row->created_at }}</td>
-                            </tr>
-                            <tr class="border-x-shade border-t">
-                                <td colspan="4">
-                                    <div class="text-x-black text-sm font-x-core p-2 px-8">{{ __('Items') }}</div>
-                                    <table class="w-full border-x-shade border-t">
-                                        <thead>
-                                            <tr>
-                                                <td class="text-x-black text-sm font-x-core p-2 ps-8">#</td>
-                                                <td class="text-x-black text-sm font-x-core p-2">
-                                                    {{ __('Type') }}</td>
-                                                <td class="text-x-black text-sm font-x-core p-2">
-                                                    {{ __('Content') }}</td>
-                                                <td class="text-x-black text-sm font-x-core p-2 pe-8">
-                                                    {{ __('Note') }}</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($row->items() as $item)
-                                                <tr class="border-x-shade border-t">
-                                                    <td class="text-x-black text-base p-2 ps-8">
-                                                        <span class="font-x-core text-sm">
-                                                            {{ $item->id }}
-                                                        </span>
-                                                    </td>
-                                                    <td class="text-x-black text-base p-2">
-                                                        {{ ucwords(__($item->type)) }}
-                                                    </td>
-                                                    <td class="text-x-black text-base p-2">{{ $item->content }}</td>
-                                                    <td class="text-x-black text-base p-2 pe-8">
-                                                        {{ $item->note ?? '__' }}
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                            @if ($row->note)
+            <div class="flex flex-col gap-4">
+                <h2 class="text-x-black font-x-core text-2xl leading-[1]">{{ __('Records List') }}</h2>
+                <div class="border-x-shade border w-full rounded-md">
+                    <table class="w-full">
+                        @if ($data->records()->count())
+                            <thead>
+                                <tr>
+                                    <td class="text-x-black text-sm font-x-core p-2 ps-4">{{ __('Type') }}</td>
+                                    <td class="text-x-black text-sm font-x-core p-2">{{ __('Content') }}</td>
+                                    <td class="text-x-black text-sm font-x-core p-2 pe-4">{{ __('Created at') }}</td>
+                                </tr>
+                            </thead>
+                        @endif
+                        <tbody>
+                            @forelse ($data->records() as $row)
                                 <tr class="border-x-shade border-t">
-                                    <td colspan="4" class="text-x-black text-base p-2 px-8">
-                                        <div class="text-sm font-x-core mb-1">{{ __('Note') }}</div>
-                                        <div>{{ $row->note }}</div>
+                                    <td class="text-x-black text-base p-2 ps-4">{{ ucwords(__($row->type)) }}</td>
+                                    <td class="text-x-black text-base p-2">{{ $row->content }}</td>
+                                    <td class="text-x-black text-base p-2 pe-4">{{ $row->created_at }}</td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td class="text-x-black p-4 text-xl font-x-core uppercase text-center">
+                                        {{ __('No data found') }}
                                     </td>
                                 </tr>
-                            @endif
-                        @empty
-                            <tr>
-                                <td colspan="4" class="text-x-black p-4 text-xl font-x-core uppercase text-center">
-                                    {{ __('No data found') }}
-                                </td>
-                            </tr>
-                        @endforelse
-                    </tbody>
-                </table>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-            <h2 class="text-x-black font-x-core text-2xl my-4 leading-[1]">{{ __('Appointments List') }}</h2>
-            <div class="border-x-shade border w-full rounded-sm">
-                <table class="w-full">
-                    @if ($data->appointments()->count())
-                        <thead>
-                            <tr>
-                                <td class="text-x-black text-sm font-x-core p-2 ps-4">#</td>
-                                <td class="text-x-black text-sm font-x-core p-2">{{ __('Date') }}</td>
-                                <td class="text-x-black text-sm font-x-core p-2">{{ __('Time') }}</td>
-                                <td class="text-x-black text-sm font-x-core p-2">{{ __('Status') }}</td>
-                                <td class="text-x-black text-sm font-x-core p-2 pe-4">{{ __('Created at') }}</td>
-                            </tr>
-                        </thead>
-                    @endif
-                    <tbody>
-                        @forelse ($data->appointments() as $row)
-                            <tr class="border-x-shade border-t">
-                                <td class="text-x-black text-base p-2 ps-4">
-                                    <span class="font-x-core text-sm">
-                                        {{ $row->id }}
-                                    </span>
-                                </td>
-                                <td class="text-x-black text-base p-2">
-                                    {{ $row->date }}
-                                </td>
-                                <td class="text-x-black text-base p-2">
-                                    {{ $row->time }}
-                                </td>
-                                <td class="text-x-black text-base p-2">
-                                    {{ ucwords(__($row->status)) }}
-                                </td>
-                                <td class="text-x-black text-base p-2 pe-4">{{ $row->created_at }}</td>
-                            </tr>
+            <div class="flex flex-col gap-4">
+                <h2 class="text-x-black font-x-core text-2xl leading-[1]">{{ __('Entries List') }}</h2>
+                <div class="w-full flex flex-col gap-4">
+                    @forelse ($data->entries() as $row)
+                        <div class="w-full border-x-shade border rounded-md">
+                            <table class="w-full">
+                                <thead>
+                                    <tr>
+                                        <td class="w-1/2 text-x-black text-sm font-x-core p-2 ps-4">
+                                            {{ __('Date') }}
+                                        </td>
+                                        <td class="w-1/2 text-x-black text-sm font-x-core p-2 pe-4">
+                                            {{ __('Type') }}
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-x-shade border-t">
+                                        <td class="w-1/2 text-x-black text-base p-2 ps-4">
+                                            {{ $row->created_at }}
+                                        </td>
+                                        <td class="w-1/2 text-x-black text-base p-2 pe-4">
+                                            {{ ucwords(__($row->type)) }}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="border-x-shade border-t">
+                                        <td class="text-x-black text-sm font-x-core p-2 px-4">
+                                            {{ __('Content') }}
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-x-shade border-t">
+                                        <td class="text-x-black text-base p-2 px-4">
+                                            {!! nl2br($row->content) !!}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    @empty
+                        <div
+                            class="text-x-black p-4 text-xl font-x-core uppercase text-center border-x-shade border w-full rounded-md">
+                            {{ __('No data found') }}
+                        </div>
+                    @endforelse
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <h2 class="text-x-black font-x-core text-2xl leading-[1]">{{ __('Prescriptions List') }}</h2>
+                <div class="w-full flex flex-col gap-4">
+                    @forelse ($data->prescriptions() as $row)
+                        <div class="w-full border-x-shade border rounded-md">
+                            <table class="w-full">
+                                <thead>
+                                    <tr>
+                                        <td class="text-x-black text-sm font-x-core p-2 px-4">
+                                            {{ __('Date') }}
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-x-shade border-t">
+                                        <td class="text-x-black text-base p-2 px-4">
+                                            {{ $row->created_at }}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="border-x-shade border-t">
+                                        <td class="w-1/3 text-x-black text-sm font-x-core p-2 ps-4">
+                                            {{ __('Type') }}</td>
+                                        <td class="w-1/3 text-x-black text-sm font-x-core p-2">
+                                            {{ __('Content') }}</td>
+                                        <td class="w-1/3 text-x-black text-sm font-x-core p-2 pe-4">
+                                            {{ __('Note') }}</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($row->items() as $item)
+                                        <tr class="border-x-shade border-t">
+                                            <td class="w-1/3 text-x-black text-base p-2 ps-4">
+                                                {{ ucwords(__($item->type)) }}
+                                            </td>
+                                            <td class="w-1/3 text-x-black text-base p-2">{{ $item->content }}</td>
+                                            <td class="w-1/3 text-x-black text-base p-2 pe-4">
+                                                {{ $item->note ?? '__' }}
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                             @if ($row->note)
+                                <table class="w-full">
+                                    <thead>
+                                        <tr class="border-x-shade border-t">
+                                            <td class="text-x-black text-sm font-x-core p-2 px-4">
+                                                {{ __('Note') }}
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="border-x-shade border-t">
+                                            <td class="text-x-black text-base p-2 px-4">
+                                                {{ $item->note }}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            @endif
+                        </div>
+                    @empty
+                        <div
+                            class="text-x-black p-4 text-xl font-x-core uppercase text-center border-x-shade border w-full rounded-md">
+                            {{ __('No data found') }}
+                        </div>
+                    @endforelse
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <h2 class="text-x-black font-x-core text-2xl leading-[1]">{{ __('Contacts List') }}</h2>
+                <div class="border-x-shade border w-full rounded-md">
+                    <table class="w-full">
+                        @if ($data->contacts()->count())
+                            <thead>
+                                <tr>
+                                    <td class="text-x-black text-sm font-x-core p-2 ps-4">{{ __('Full Name') }}</td>
+                                    <td class="text-x-black text-sm font-x-core p-2">{{ __('Phone') }}</td>
+                                    <td class="text-x-black text-sm font-x-core p-2 pe-4">{{ __('Email') }}</td>
+                                </tr>
+                            </thead>
+                        @endif
+                        <tbody>
+                            @forelse ($data->contacts() as $row)
                                 <tr class="border-x-shade border-t">
-                                    <td colspan="6" class="text-x-black text-base p-2 px-8">
-                                        <div class="text-sm font-x-core mb-1">{{ __('Note') }}</div>
-                                        <div>{{ $row->note }}</div>
+                                    <td class="text-x-black text-base p-2 ps-4">
+                                        {{ strtoupper($row->last_name) }}
+                                        {{ ucfirst($row->first_name) }}
+                                    </td>
+                                    <td class="text-x-black text-base p-2">
+                                        {{ $row->phone }}
+                                    </td>
+                                    <td class="text-x-black text-base p-2 pe-4">
+                                        {{ $row->email ?? '__' }}
                                     </td>
                                 </tr>
-                            @endif
-                        @empty
-                            <tr class="border-x-shade border-t">
-                                <td class="text-x-black p-4 text-xl font-x-core uppercase text-center">
-                                    {{ __('No data found') }}
-                                </td>
-                            </tr>
-                        @endforelse
-                    </tbody>
-                </table>
-            </div>
-
-            <h2 class="text-x-black font-x-core text-2xl my-4 leading-[1]">{{ __('Contacts List') }}</h2>
-            <div class="border-x-shade border w-full rounded-sm">
-                <table class="w-full">
-                    @if ($data->contacts()->count())
-                        <thead>
-                            <tr>
-                                <td class="text-x-black text-sm font-x-core p-2 ps-4">#</td>
-                                <td class="text-x-black text-sm font-x-core p-2">{{ __('Full Name') }}</td>
-                                <td class="text-x-black text-sm font-x-core p-2">{{ __('Phone') }}</td>
-                                <td class="text-x-black text-sm font-x-core p-2 pe-4">{{ __('Email') }}</td>
-                            </tr>
-                        </thead>
-                    @endif
-                    <tbody>
-                        @forelse ($data->contacts() as $row)
-                            <tr class="border-x-shade border-t">
-                                <td class="text-x-black text-base p-2 ps-4">
-                                    <span class="font-x-core text-sm">
-                                        {{ $row->id }}
-                                    </span>
-                                </td>
-                                <td class="text-x-black text-base p-2">
-                                    {{ strtoupper($row->last_name) }}
-                                    {{ ucfirst($row->first_name) }}</td>
-                                <td class="text-x-black text-base p-2">{{ $row->phone ?? '__' }}</td>
-                                <td class="text-x-black text-base p-2 pe-4">{{ $row->email ?? '__' }}</td>
-                            </tr>
-                        @empty
-                            <tr>
-                                <td class="text-x-black p-4 text-xl font-x-core uppercase text-center">
-                                    {{ __('No data found') }}
-                                </td>
-                            </tr>
-                        @endforelse
-                    </tbody>
-                </table>
-            </div>
-
-            <h2 class="text-x-black font-x-core text-2xl my-4 leading-[1]">{{ __('Invoices List') }}</h2>
-            <div class="border-x-shade border w-full rounded-sm">
-                <table class="w-full">
-                    @if ($data->invoices()->count())
-                        <thead>
-                            <tr>
-                                <td class="text-x-black text-sm font-x-core p-2 ps-4">#</td>
-                                <td class="text-x-black text-sm font-x-core p-2">{{ __('Total') }}</td>
-                                <td class="text-x-black text-sm font-x-core p-2">{{ __('Payment') }}</td>
-                                <td class="text-x-black text-sm font-x-core p-2 pe-4">{{ __('Created at') }}</td>
-                            </tr>
-                        </thead>
-                    @endif
-                    <tbody>
-                        @forelse ($data->invoices() as $row)
-                            <tr class="border-x-shade border-t">
-                                <td class="text-x-black text-base p-2 ps-4">
-                                    <span class="font-x-core text-sm">
-                                        {{ $row->id }}
-                                    </span>
-                                </td>
-                                <td>{{ $row->items()->sum('cost') }} {{ Core::system()->currency }}</td>
-                                <td class="text-x-black text-base p-2">{{ ucwords(__($row->payment)) }}</td>
-                                <td class="text-x-black text-base p-2 pe-4">{{ $row->created_at }}</td>
-                            </tr>
-                            <tr class="border-x-shade border-t">
-                                <td colspan="5">
-                                    <div class="text-x-black text-sm font-x-core p-2 px-8">{{ __('Items') }}</div>
-                                    <table class="w-full border-x-shade border-t">
-                                        <thead>
-                                            <tr>
-                                                <td class="text-x-black text-sm font-x-core p-2 ps-8">#</td>
-                                                <td class="text-x-black text-sm font-x-core p-2">
-                                                    {{ __('Content') }}</td>
-                                                <td class="text-x-black text-sm font-x-core p-2 pe-8">
-                                                    {{ __('Cost') }}</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($row->items() as $item)
-                                                <tr class="border-x-shade border-t">
-                                                    <td class="text-x-black text-base p-2 ps-8">
-                                                        <span class="font-x-core text-sm">
-                                                            {{ $item->id }}
-                                                        </span>
-                                                    </td>
-                                                    <td class="text-x-black text-base p-2">{{ $item->content }}</td>
-                                                    <td class="text-x-black text-base p-2 pe-8">
-                                                        {{ $item->cost }} {{ Core::system()->currency }}
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                            @if ($row->note)
-                                <tr class="border-x-shade border-t">
-                                    <td colspan="5" class="text-x-black text-base p-2">
-                                        <div class="text-sm font-x-core">{{ __('Note') }}</div>
-                                        <div>{{ $row->note }}</div>
+                            @empty
+                                <tr>
+                                    <td class="text-x-black p-4 text-xl font-x-core uppercase text-center">
+                                        {{ __('No data found') }}
                                     </td>
                                 </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <h2 class="text-x-black font-x-core text-2xl leading-[1]">{{ __('Appointments List') }}</h2>
+                <div class="border-x-shade border w-full rounded-md">
+                    <table class="w-full">
+                        @if ($data->appointments()->count())
+                            <thead>
+                                <tr>
+                                    <td class="text-x-black text-sm font-x-core p-2 ps-4">{{ __('Date') }}</td>
+                                    <td class="text-x-black text-sm font-x-core p-2">{{ __('Time') }}</td>
+                                    <td class="text-x-black text-sm font-x-core p-2">{{ __('Status') }}</td>
+                                    <td class="text-x-black text-sm font-x-core p-2 pe-4">{{ __('Created at') }}</td>
+                                </tr>
+                            </thead>
+                        @endif
+                        <tbody>
+                            @forelse ($data->appointments() as $row)
+                                <tr class="border-x-shade border-t">
+                                    <td class="text-x-black text-base p-2 ps-4">
+                                        {{ $row->date }}
+                                    </td>
+                                    <td class="text-x-black text-base p-2">
+                                        {{ $row->time }}
+                                    </td>
+                                    <td class="text-x-black text-base p-2">
+                                        {{ ucwords(__($row->status)) }}
+                                    </td>
+                                    <td class="text-x-black text-base p-2 pe-4">
+                                        {{ $row->created_at }}
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr class="border-x-shade border-t">
+                                    <td class="text-x-black p-4 text-xl font-x-core uppercase text-center">
+                                        {{ __('No data found') }}
+                                    </td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <h2 class="text-x-black font-x-core text-2xl leading-[1]">{{ __('Invoices List') }}</h2>
+                <div class="w-full flex flex-col gap-4">
+                    @forelse ($data->invoices() as $row)
+                        <div class="w-full border-x-shade border rounded-md">
+                            <table class="w-full">
+                                <thead>
+                                    <tr>
+                                        <td class="w-1/3 text-x-black text-sm font-x-core p-2 ps-4">
+                                            {{ __('Date') }}
+                                        </td>
+                                        <td class="w-1/3 text-x-black text-sm font-x-core p-2">
+                                            {{ __('Total') }}
+                                        </td>
+                                        <td class="w-1/3 text-x-black text-sm font-x-core p-2 pe-4">
+                                            {{ __('Payment') }}
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-x-shade border-t">
+                                        <td class="w-1/3 text-x-black text-base p-2 ps-4">
+                                            {{ $row->created_at }}
+                                        </td>
+                                        <td class="w-1/3 text-x-black text-base p-2">
+                                            {{ $row->items()->sum('cost') }} {{ Core::system()->currency }}
+                                        </td>
+                                        <td class="w-1/3 text-x-black text-base p-2 pe-4">
+                                            {{ ucwords(__($row->payment)) }}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="border-x-shade border-t">
+                                        <td class="w-1/2 text-x-black text-sm font-x-core p-2 ps-4">
+                                            {{ __('Content') }}
+                                        </td>
+                                        <td class="w-1/2 text-x-black text-sm font-x-core p-2 pe-4">
+                                            {{ __('Cost') }}
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($row->items() as $item)
+                                        <tr class="border-x-shade border-t">
+                                            <td class="w-1/2 text-x-black text-base p-2 ps-4">
+                                                {{ $item->content }}
+                                            </td>
+                                            <td class="w-1/2 text-x-black text-base p-2 pe-4">
+                                                {{ $item->cost }} {{ Core::system()->currency }}
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            @if ($row->note)
+                                <table class="w-full">
+                                    <thead>
+                                        <tr class="border-x-shade border-t">
+                                            <td class="text-x-black text-sm font-x-core p-2 px-4">
+                                                {{ __('Note') }}
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="border-x-shade border-t">
+                                            <td class="text-x-black text-base p-2 px-4">
+                                                {{ $item->note }}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             @endif
-                        @empty
-                            <tr>
-                                <td class="text-x-black p-4 text-xl font-x-core uppercase text-center">
-                                    {{ __('No data found') }}
-                                </td>
-                            </tr>
-                        @endforelse
-                    </tbody>
-                </table>
+                        </div>
+                    @empty
+                        <div
+                            class="text-x-black p-4 text-xl font-x-core uppercase text-center border-x-shade border w-full rounded-md">
+                            {{ __('No data found') }}
+                        </div>
+                    @endforelse
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <h2 class="text-x-black font-x-core text-2xl leading-[1]">{{ __('Documents List') }}</h2>
+                <div class="w-full flex flex-col gap-4">
+                    @forelse ($data->documents() as $row)
+                        <div class="w-full">
+                            @if (in_array($row->mime, [
+                                    'image/svg+xml',
+                                    'image/webp',
+                                    'image/jpeg',
+                                    'image/apng',
+                                    'image/avif',
+                                    'image/gif',
+                                    'image/png',
+                                ]))
+                                <img src="{{ asset('storage/documents/' . $row->name) }}"
+                                    class="block w-full border-x-shade border rounded-md overflow-hidden" />
+                            @endif
+                        </div>
+                    @empty
+                        <div
+                            class="text-x-black p-4 text-xl font-x-core uppercase text-center border-x-shade border w-full rounded-md">
+                            {{ __('No data found') }}
+                        </div>
+                    @endforelse
+                </div>
             </div>
         </div>
     </section>

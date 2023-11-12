@@ -174,289 +174,289 @@
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(127, 29, 29)"
                                                 style="background: rgb(127, 29, 29)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/2] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(153, 27, 27)"
                                                 style="background: rgb(153, 27, 27)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/2] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(185, 28, 28)"
                                                 style="background: rgb(185, 28, 28)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/2] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(220, 38, 38)"
                                                 style="background: rgb(220, 38, 38)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/2] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(239, 68, 68)"
                                                 style="background: rgb(239, 68, 68)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/2] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(248, 113, 113)"
                                                 style="background: rgb(248, 113, 113)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/2] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(124, 45, 18)"
                                                 style="background: rgb(124, 45, 18)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/2] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(154, 52, 18)"
                                                 style="background: rgb(154, 52, 18)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/2] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(194, 65, 12)"
                                                 style="background: rgb(194, 65, 12)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/2] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(234, 88, 12)"
                                                 style="background: rgb(234, 88, 12)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/2] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(249, 115, 22)"
                                                 style="background: rgb(249, 115, 22)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/2] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(251, 146, 60)"
                                                 style="background: rgb(251, 146, 60)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/2] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(113, 63, 18)"
                                                 style="background: rgb(113, 63, 18)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/2] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(133, 77, 14)"
                                                 style="background: rgb(133, 77, 14)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/2] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(161, 98, 7)"
                                                 style="background: rgb(161, 98, 7)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/2] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(202, 138, 4)"
                                                 style="background: rgb(202, 138, 4)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/2] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(234, 179, 8)"
                                                 style="background: rgb(234, 179, 8)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/2] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(250, 204, 21)"
                                                 style="background: rgb(250, 204, 21)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/2] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(54, 83, 20)"
                                                 style="background: rgb(54, 83, 20)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/2] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(63, 98, 18)"
                                                 style="background: rgb(63, 98, 18)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/2] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(77, 124, 15)"
                                                 style="background: rgb(77, 124, 15)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/2] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(101, 163, 13)"
                                                 style="background: rgb(101, 163, 13)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/2] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(132, 204, 22)"
                                                 style="background: rgb(132, 204, 22)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(163, 230, 53)"
                                                 style="background: rgb(163, 230, 53)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(6, 78, 59)"
                                                 style="background: rgb(6, 78, 59)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(6, 95, 70)"
                                                 style="background: rgb(6, 95, 70)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(4, 120, 87)"
                                                 style="background: rgb(4, 120, 87)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(5, 150, 105)"
                                                 style="background: rgb(5, 150, 105)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(16, 185, 129)"
                                                 style="background: rgb(16, 185, 129)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(52, 211, 153)"
                                                 style="background: rgb(52, 211, 153)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(19, 78, 74)"
                                                 style="background: rgb(19, 78, 74)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(17, 94, 89)"
                                                 style="background: rgb(17, 94, 89)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(15, 118, 110)"
                                                 style="background: rgb(15, 118, 110)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(13, 148, 136)"
                                                 style="background: rgb(13, 148, 136)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(20, 184, 166)"
                                                 style="background: rgb(20, 184, 166)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(45, 212, 191)"
                                                 style="background: rgb(45, 212, 191)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(22, 78, 99)"
                                                 style="background: rgb(22, 78, 99)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(21, 94, 117)"
                                                 style="background: rgb(21, 94, 117)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(14, 116, 144)"
                                                 style="background: rgb(14, 116, 144)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(8, 145, 178)"
                                                 style="background: rgb(8, 145, 178)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(6, 182, 212)"
                                                 style="background: rgb(6, 182, 212)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(34, 211, 238)"
                                                 style="background: rgb(34, 211, 238)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(12, 74, 110)"
                                                 style="background: rgb(12, 74, 110)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(7, 89, 133)"
                                                 style="background: rgb(7, 89, 133)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(3, 105, 161)"
                                                 style="background: rgb(3, 105, 161)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(2, 132, 199)"
                                                 style="background: rgb(2, 132, 199)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(14, 165, 233)"
                                                 style="background: rgb(14, 165, 233)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                         <li class="w-[calc((100%-(0.5rem*5))/6)]">
                                             <a data-exec="Color" data-color="rgb(56, 189, 248)"
                                                 style="background: rgb(56, 189, 248)" href="javascript:void(0)"
-                                                class="w-full rounded-md aspect-[4/1] lg:aspect-square block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
+                                                class="w-full rounded-md aspect-[4/3] block outline-offset-1 hover:outline-4 focus-within:outline hover:outline-x-black focus-within:outline-x-black">
                                             </a>
                                         </li>
                                     </ul>

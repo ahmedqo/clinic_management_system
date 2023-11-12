@@ -26,7 +26,6 @@
             <table x-table search filter remove="7" download="documents_list">
                 <thead>
                     <tr>
-                        <td>#</td>
                         <td>{{ __('Patient Name') }}</td>
                         <td>{{ __('Type') }}</td>
                         <td>{{ __('Name') }}</td>
@@ -41,11 +40,6 @@
                 <tbody>
                     @foreach ($data as $row)
                         <tr>
-                            <td>
-                                <span class="font-x-core text-sm">
-                                    {{ $row->id }}
-                                </span>
-                            </td>
                             <td>
                                 {{ strtoupper($row->patient()->last_name) }} {{ ucfirst($row->patient()->first_name) }}
                             </td>

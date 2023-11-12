@@ -61,7 +61,8 @@
     <dialog id="modal" style="height: var(--vh)"
         class="bg-x-black-blur pointer-events-none hidden fixed inset-0 w-full h-screen z-[50]  backdrop-blur-sm p-2 lg:p-4 overflow-auto">
         <section class="w-full lg:p-4 lg:w-1/2 mx-auto mt-auto lg:my-auto">
-            <div class="flex flex-col gap-4 bg-x-white rounded-md shadow-x-core lg:rounded-x-core p-4">
+            <div
+                class="flex flex-col gap-4 bg-x-white rounded-md shadow-x-core lg:rounded-x-core p-4 border border-x-shade">
                 <div class="w-full flex items-center justify-between gap-2">
                     <h1 class="font-x-core text-2xl">{{ __('Create Appointment') }}</h1>
                     <div class="w-max flex gap-[2px] ms-auto rounded-md overflow-hidden">

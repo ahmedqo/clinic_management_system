@@ -34,7 +34,6 @@
             <table x-table search filter remove="5" download="contacts_list">
                 <thead>
                     <tr>
-                        <td>#</td>
                         <td>{{ __('Patient Name') }}</td>
                         <td>{{ __('Full Name') }}</td>
                         <td>{{ __('Phone') }}</td>
@@ -47,11 +46,6 @@
                 <tbody>
                     @foreach ($data as $row)
                         <tr>
-                            <td>
-                                <span class="font-x-core text-sm">
-                                    {{ $row->id }}
-                                </span>
-                            </td>
                             <td>
                                 {{ strtoupper($row->patient()->last_name) }} {{ ucfirst($row->patient()->first_name) }}
                             </td>
@@ -83,8 +77,7 @@
                     @if ($data->count())
                         <thead>
                             <tr>
-                                <td class="text-x-black text-sm font-x-core p-2 ps-4">#</td>
-                                <td class="text-x-black text-sm font-x-core p-2">{{ __('Patient Name') }}</td>
+                                <td class="text-x-black text-sm font-x-core p-2 ps-4">{{ __('Patient Name') }}</td>
                                 <td class="text-x-black text-sm font-x-core p-2">{{ __('Full Name') }}</td>
                                 <td class="text-x-black text-sm font-x-core p-2">{{ __('Phone') }}</td>
                                 <td class="text-x-black text-sm font-x-core p-2 pe-4">{{ __('Email') }}</td>
@@ -95,11 +88,6 @@
                         @forelse ($data as $row)
                             <tr class="border-x-shade border-t">
                                 <td class="text-x-black text-base p-2 ps-4">
-                                    <span class="font-x-core text-sm">
-                                        {{ $row->id }}
-                                    </span>
-                                </td>
-                                <td class="text-x-black text-base p-2">
                                     {{ strtoupper($row->patient()->last_name) }}
                                     {{ ucfirst($row->patient()->first_name) }}
                                 </td>

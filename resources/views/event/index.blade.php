@@ -34,7 +34,6 @@
             <table x-table search filter remove="6" download="events_list">
                 <thead>
                     <tr>
-                        <td>#</td>
                         <td>{{ __('Type') }}</td>
                         <td>{{ __('Start at') }}</td>
                         <td>{{ __('End at') }}</td>
@@ -49,11 +48,6 @@
                 <tbody>
                     @foreach ($data as $row)
                         <tr>
-                            <td>
-                                <span class="font-x-core text-sm">
-                                    {{ $row->id }}
-                                </span>
-                            </td>
                             <td>{{ ucwords(__($row->type)) }}</td>
                             <td>
                                 {{ $row->start_date }} {{ $row->start_time }}
@@ -90,8 +84,7 @@
                     @if ($data->count())
                         <thead>
                             <tr>
-                                <td class="text-x-black text-sm font-x-core p-2 ps-4">#</td>
-                                <td class="text-x-black text-sm font-x-core p-2">{{ __('Type') }}</td>
+                                <td class="text-x-black text-sm font-x-core p-2 ps-4">{{ __('Type') }}</td>
                                 <td class="text-x-black text-sm font-x-core p-2">{{ __('Start at') }}</td>
                                 <td class="text-x-black text-sm font-x-core p-2">{{ __('End at') }}</td>
                                 <td class="text-x-black text-sm font-x-core p-2">{{ __('Duration') }}</td>
@@ -103,11 +96,6 @@
                         @forelse ($data as $row)
                             <tr class="border-x-shade border-t">
                                 <td class="text-x-black text-base p-2 ps-4">
-                                    <span class="font-x-core text-sm">
-                                        {{ $row->id }}
-                                    </span>
-                                </td>
-                                <td class="text-x-black text-base p-2">
                                     {{ ucwords(__($row->type)) }}
                                 </td>
                                 <td class="text-x-black text-base p-2">

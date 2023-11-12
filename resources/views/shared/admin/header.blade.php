@@ -29,7 +29,7 @@
                         <ul class="flex flex-col">
                             <li class="w-full">
                                 <a href="{{ route('actions.language.index', 'en') }}"
-                                    class="w-full flex gap-2 items-center p-2 py-1 outline-none text-x-black hover:bg-x-shade hover:bg-opacity-20 focus-within:bg-x-shade focus-within:bg-opacity-20 {{ Core::lang('en') ? '!bg-x-shade !bg-opacity-40 hover:!bg-opacity-20 focus-within:!bg-opacity-20' : '' }}">
+                                    class="w-full flex gap-2 items-center p-2 outline-none text-x-black hover:bg-x-shade hover:bg-opacity-20 focus-within:bg-x-shade focus-within:bg-opacity-20 {{ Core::lang('en') ? '!bg-x-shade !bg-opacity-40 hover:!bg-opacity-20 focus-within:!bg-opacity-20' : '' }}">
                                     <img src="{{ asset('lang/en.png') }}?v={{ env('APP_VERSION') }}" alt="en flag"
                                         class="block w-5 pointer-events-none" />
                                     <span class="text-sm font-medium">English</span>
@@ -37,7 +37,7 @@
                             </li>
                             <li class="w-full">
                                 <a href="{{ route('actions.language.index', 'fr') }}"
-                                    class="w-full flex gap-2 items-center p-2 py-1 outline-none text-x-black hover:bg-x-shade hover:bg-opacity-20 focus-within:bg-x-shade focus-within:bg-opacity-20 {{ Core::lang('fr') ? '!bg-x-shade !bg-opacity-40 hover:!bg-opacity-20 focus-within:!bg-opacity-20' : '' }}">
+                                    class="w-full flex gap-2 items-center p-2 outline-none text-x-black hover:bg-x-shade hover:bg-opacity-20 focus-within:bg-x-shade focus-within:bg-opacity-20 {{ Core::lang('fr') ? '!bg-x-shade !bg-opacity-40 hover:!bg-opacity-20 focus-within:!bg-opacity-20' : '' }}">
                                     <img src="{{ asset('lang/fr.png') }}?v={{ env('APP_VERSION') }}" alt="fr flag"
                                         class="block w-5 pointer-events-none" />
                                     <span class="text-sm font-medium">Francais</span>
@@ -45,7 +45,7 @@
                             </li>
                             <li class="w-full">
                                 <a href="{{ route('actions.language.index', 'ar') }}"
-                                    class="w-full flex gap-2 items-center p-2 py-1 outline-none text-x-black hover:bg-x-shade hover:bg-opacity-20 focus-within:bg-x-shade focus-within:bg-opacity-20 {{ Core::lang('ar') ? '!bg-x-shade !bg-opacity-40 hover:!bg-opacity-20 focus-within:!bg-opacity-20' : '' }}">
+                                    class="w-full flex gap-2 items-center p-2 outline-none text-x-black hover:bg-x-shade hover:bg-opacity-20 focus-within:bg-x-shade focus-within:bg-opacity-20 {{ Core::lang('ar') ? '!bg-x-shade !bg-opacity-40 hover:!bg-opacity-20 focus-within:!bg-opacity-20' : '' }}">
                                     <img src="{{ asset('lang/ar.png') }}?v={{ env('APP_VERSION') }}" alt="ar flag"
                                         class="block w-5 pointer-events-none" />
                                     <span class="text-sm font-medium">العربية</span>
@@ -75,7 +75,7 @@
                         <ul class="flex flex-col">
                             <li class="w-full">
                                 <a href="{{ route('views.profile.update') }}"
-                                    class="w-full flex gap-2 items-center p-1.5 outline-none text-x-black hover:bg-x-black-blur focus-within:bg-x-black-blur {{ request()->routeIs('views.profile.update') ? '!bg-x-black-blur' : '' }}">
+                                    class="w-full flex gap-2 items-center p-2 outline-none text-x-black hover:bg-x-black-blur focus-within:bg-x-black-blur {{ request()->routeIs('views.profile.update') ? '!bg-x-black-blur' : '' }}">
                                     <svg class="block w-5 h-5 pointer-events-none !text-[var(--color-sys-1)]"
                                         fill="currentcolor" viewBox="0 -960 960 960">
                                         <path
@@ -86,7 +86,7 @@
                             </li>
                             <li class="w-full">
                                 <a href="{{ route('views.password.update') }}"
-                                    class="w-full flex gap-2 items-center p-1.5 outline-none text-x-black hover:bg-x-black-blur focus-within:bg-x-black-blur {{ request()->routeIs('views.password.update') ? '!bg-x-black-blur' : '' }}">
+                                    class="w-full flex gap-2 items-center p-2 outline-none text-x-black hover:bg-x-black-blur focus-within:bg-x-black-blur {{ request()->routeIs('views.password.update') ? '!bg-x-black-blur' : '' }}">
                                     <svg class="block w-5 h-5 pointer-events-none !text-[var(--color-sys-0)]"
                                         fill="currentcolor" viewBox="0 -960 960 960">
                                         <path
@@ -99,7 +99,7 @@
                                 <form action="{{ route('actions.logout.index') }}" method="POST">
                                     @csrf
                                     <button type="submit" title="clear"
-                                        class="w-full flex gap-2 items-center p-1.5 outline-none text-x-black hover:bg-x-shade hover:bg-opacity-20 focus-within:bg-x-shade focus-within:bg-opacity-20">
+                                        class="w-full flex gap-2 items-center p-2 outline-none text-x-black hover:bg-x-shade hover:bg-opacity-20 focus-within:bg-x-shade focus-within:bg-opacity-20">
                                         <svg class="block w-5 h-5 pointer-events-none !text-[var(--color-sys-2)]"
                                             fill="currentcolor" viewBox="0 -960 960 960">
                                             <path
@@ -113,5 +113,6 @@
                     </div>
                 </div>
             </div>
+        </div>
     </nav>
 </header>
